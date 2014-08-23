@@ -29,6 +29,10 @@
 		FA83BA5B19A8EEB500423F16 /* AHTwitterUserBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = FA83BA5919A8EEB500423F16 /* AHTwitterUserBuilder.m */; };
 		FA83BA6219A8F37E00423F16 /* AHBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = FA83BA6119A8F37E00423F16 /* AHBuilder.m */; };
 		FA83BA6319A8F37E00423F16 /* AHBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = FA83BA6119A8F37E00423F16 /* AHBuilder.m */; };
+		FA83BA6919A915E000423F16 /* AHTwitterManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FA83BA6819A915E000423F16 /* AHTwitterManager.m */; };
+		FA83BA6A19A915E000423F16 /* AHTwitterManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FA83BA6819A915E000423F16 /* AHTwitterManager.m */; };
+		FA83BA6D19A916EC00423F16 /* AHTwitterConnector.m in Sources */ = {isa = PBXBuildFile; fileRef = FA83BA6C19A916EC00423F16 /* AHTwitterConnector.m */; };
+		FA83BA6E19A916EC00423F16 /* AHTwitterConnector.m in Sources */ = {isa = PBXBuildFile; fileRef = FA83BA6C19A916EC00423F16 /* AHTwitterConnector.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +77,10 @@
 		FA83BA6019A8F37E00423F16 /* AHBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AHBuilder.h; path = Model/AHBuilder.h; sourceTree = "<group>"; };
 		FA83BA6119A8F37E00423F16 /* AHBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AHBuilder.m; path = Model/AHBuilder.m; sourceTree = "<group>"; };
 		FA83BA6519A9033500423F16 /* utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = utils.h; sourceTree = "<group>"; };
+		FA83BA6719A915E000423F16 /* AHTwitterManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AHTwitterManager.h; path = Social/AHTwitterManager.h; sourceTree = "<group>"; };
+		FA83BA6819A915E000423F16 /* AHTwitterManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AHTwitterManager.m; path = Social/AHTwitterManager.m; sourceTree = "<group>"; };
+		FA83BA6B19A916EC00423F16 /* AHTwitterConnector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AHTwitterConnector.h; path = Social/AHTwitterConnector.h; sourceTree = "<group>"; };
+		FA83BA6C19A916EC00423F16 /* AHTwitterConnector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AHTwitterConnector.m; path = Social/AHTwitterConnector.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +140,7 @@
 		FA83BA1419A8ABED00423F16 /* EarlyBird */ = {
 			isa = PBXGroup;
 			children = (
+				FA83BA6619A9140F00423F16 /* Twitter */,
 				FA83BA3D19A8AD9E00423F16 /* Model */,
 				FA83BA1D19A8ABED00423F16 /* AHAppDelegate.h */,
 				FA83BA1E19A8ABED00423F16 /* AHAppDelegate.m */,
@@ -198,6 +207,17 @@
 				FA83BA5919A8EEB500423F16 /* AHTwitterUserBuilder.m */,
 			);
 			name = Builders;
+			sourceTree = "<group>";
+		};
+		FA83BA6619A9140F00423F16 /* Twitter */ = {
+			isa = PBXGroup;
+			children = (
+				FA83BA6B19A916EC00423F16 /* AHTwitterConnector.h */,
+				FA83BA6C19A916EC00423F16 /* AHTwitterConnector.m */,
+				FA83BA6719A915E000423F16 /* AHTwitterManager.h */,
+				FA83BA6819A915E000423F16 /* AHTwitterManager.m */,
+			);
+			name = Twitter;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -302,7 +322,9 @@
 				FA83BA4419A8B78800423F16 /* AHRealTweet.m in Sources */,
 				FA83BA5A19A8EEB500423F16 /* AHTwitterUserBuilder.m in Sources */,
 				FA83BA4719A8B93700423F16 /* AHRealTwitterUser.m in Sources */,
+				FA83BA6919A915E000423F16 /* AHTwitterManager.m in Sources */,
 				FA83BA4A19A8B98B00423F16 /* AHTweetBuilder.m in Sources */,
+				FA83BA6D19A916EC00423F16 /* AHTwitterConnector.m in Sources */,
 				FA83BA1B19A8ABED00423F16 /* main.m in Sources */,
 				FA83BA1F19A8ABED00423F16 /* AHAppDelegate.m in Sources */,
 			);
@@ -312,8 +334,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA83BA6E19A916EC00423F16 /* AHTwitterConnector.m in Sources */,
 				FA83BA4C19A8BF5600423F16 /* AHTweetBuilderTests.m in Sources */,
 				FA83BA5B19A8EEB500423F16 /* AHTwitterUserBuilder.m in Sources */,
+				FA83BA6A19A915E000423F16 /* AHTwitterManager.m in Sources */,
 				FA83BA6319A8F37E00423F16 /* AHBuilder.m in Sources */,
 				FA83BA3419A8ABED00423F16 /* EarlyBirdTests.m in Sources */,
 			);
