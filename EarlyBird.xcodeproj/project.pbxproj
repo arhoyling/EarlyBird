@@ -19,6 +19,16 @@
 		FA83BA2A19A8ABED00423F16 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA83BA1219A8ABED00423F16 /* UIKit.framework */; };
 		FA83BA3219A8ABED00423F16 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FA83BA3019A8ABED00423F16 /* InfoPlist.strings */; };
 		FA83BA3419A8ABED00423F16 /* EarlyBirdTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FA83BA3319A8ABED00423F16 /* EarlyBirdTests.m */; };
+		FA83BA4419A8B78800423F16 /* AHRealTweet.m in Sources */ = {isa = PBXBuildFile; fileRef = FA83BA4319A8B78800423F16 /* AHRealTweet.m */; };
+		FA83BA4719A8B93700423F16 /* AHRealTwitterUser.m in Sources */ = {isa = PBXBuildFile; fileRef = FA83BA4619A8B93700423F16 /* AHRealTwitterUser.m */; };
+		FA83BA4A19A8B98B00423F16 /* AHTweetBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = FA83BA4919A8B98B00423F16 /* AHTweetBuilder.m */; };
+		FA83BA4C19A8BF5600423F16 /* AHTweetBuilderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FA83BA4B19A8BF5600423F16 /* AHTweetBuilderTests.m */; };
+		FA83BA5119A8DFAB00423F16 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FA83BA5019A8DCFA00423F16 /* Localizable.strings */; };
+		FA83BA5219A8DFE500423F16 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FA83BA5019A8DCFA00423F16 /* Localizable.strings */; };
+		FA83BA5A19A8EEB500423F16 /* AHTwitterUserBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = FA83BA5919A8EEB500423F16 /* AHTwitterUserBuilder.m */; };
+		FA83BA5B19A8EEB500423F16 /* AHTwitterUserBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = FA83BA5919A8EEB500423F16 /* AHTwitterUserBuilder.m */; };
+		FA83BA6219A8F37E00423F16 /* AHBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = FA83BA6119A8F37E00423F16 /* AHBuilder.m */; };
+		FA83BA6319A8F37E00423F16 /* AHBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = FA83BA6119A8F37E00423F16 /* AHBuilder.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +58,21 @@
 		FA83BA2F19A8ABED00423F16 /* EarlyBirdTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "EarlyBirdTests-Info.plist"; sourceTree = "<group>"; };
 		FA83BA3119A8ABED00423F16 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		FA83BA3319A8ABED00423F16 /* EarlyBirdTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EarlyBirdTests.m; sourceTree = "<group>"; };
+		FA83BA3E19A8AED200423F16 /* AHTweet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AHTweet.h; path = Model/AHTweet.h; sourceTree = "<group>"; };
+		FA83BA3F19A8B0B900423F16 /* AHTwitterUser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AHTwitterUser.h; path = Model/AHTwitterUser.h; sourceTree = "<group>"; };
+		FA83BA4219A8B78800423F16 /* AHRealTweet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AHRealTweet.h; path = Model/AHRealTweet.h; sourceTree = "<group>"; };
+		FA83BA4319A8B78800423F16 /* AHRealTweet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AHRealTweet.m; path = Model/AHRealTweet.m; sourceTree = "<group>"; };
+		FA83BA4519A8B93700423F16 /* AHRealTwitterUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AHRealTwitterUser.h; path = Model/AHRealTwitterUser.h; sourceTree = "<group>"; };
+		FA83BA4619A8B93700423F16 /* AHRealTwitterUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AHRealTwitterUser.m; path = Model/AHRealTwitterUser.m; sourceTree = "<group>"; };
+		FA83BA4819A8B98B00423F16 /* AHTweetBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AHTweetBuilder.h; path = Model/AHTweetBuilder.h; sourceTree = "<group>"; };
+		FA83BA4919A8B98B00423F16 /* AHTweetBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AHTweetBuilder.m; path = Model/AHTweetBuilder.m; sourceTree = "<group>"; };
+		FA83BA4B19A8BF5600423F16 /* AHTweetBuilderTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AHTweetBuilderTests.m; path = ../../Test/EarlyBirdTests/AHTweetBuilderTests.m; sourceTree = "<group>"; };
+		FA83BA4F19A8DCFA00423F16 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		FA83BA5819A8EEB500423F16 /* AHTwitterUserBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AHTwitterUserBuilder.h; path = Model/AHTwitterUserBuilder.h; sourceTree = "<group>"; };
+		FA83BA5919A8EEB500423F16 /* AHTwitterUserBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AHTwitterUserBuilder.m; path = Model/AHTwitterUserBuilder.m; sourceTree = "<group>"; };
+		FA83BA6019A8F37E00423F16 /* AHBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AHBuilder.h; path = Model/AHBuilder.h; sourceTree = "<group>"; };
+		FA83BA6119A8F37E00423F16 /* AHBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AHBuilder.m; path = Model/AHBuilder.m; sourceTree = "<group>"; };
+		FA83BA6519A9033500423F16 /* utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = utils.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +132,7 @@
 		FA83BA1419A8ABED00423F16 /* EarlyBird */ = {
 			isa = PBXGroup;
 			children = (
+				FA83BA3D19A8AD9E00423F16 /* Model */,
 				FA83BA1D19A8ABED00423F16 /* AHAppDelegate.h */,
 				FA83BA1E19A8ABED00423F16 /* AHAppDelegate.m */,
 				FA83BA2019A8ABED00423F16 /* Images.xcassets */,
@@ -122,6 +148,7 @@
 				FA83BA1719A8ABED00423F16 /* InfoPlist.strings */,
 				FA83BA1A19A8ABED00423F16 /* main.m */,
 				FA83BA1C19A8ABED00423F16 /* EarlyBird-Prefix.pch */,
+				FA83BA6519A9033500423F16 /* utils.h */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -130,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				FA83BA3319A8ABED00423F16 /* EarlyBirdTests.m */,
+				FA83BA4B19A8BF5600423F16 /* AHTweetBuilderTests.m */,
 				FA83BA2E19A8ABED00423F16 /* Supporting Files */,
 			);
 			path = EarlyBirdTests;
@@ -140,8 +168,36 @@
 			children = (
 				FA83BA2F19A8ABED00423F16 /* EarlyBirdTests-Info.plist */,
 				FA83BA3019A8ABED00423F16 /* InfoPlist.strings */,
+				FA83BA5019A8DCFA00423F16 /* Localizable.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FA83BA3D19A8AD9E00423F16 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FA83BA6419A8F38200423F16 /* Builders */,
+				FA83BA3E19A8AED200423F16 /* AHTweet.h */,
+				FA83BA3F19A8B0B900423F16 /* AHTwitterUser.h */,
+				FA83BA4219A8B78800423F16 /* AHRealTweet.h */,
+				FA83BA4319A8B78800423F16 /* AHRealTweet.m */,
+				FA83BA4519A8B93700423F16 /* AHRealTwitterUser.h */,
+				FA83BA4619A8B93700423F16 /* AHRealTwitterUser.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		FA83BA6419A8F38200423F16 /* Builders */ = {
+			isa = PBXGroup;
+			children = (
+				FA83BA6019A8F37E00423F16 /* AHBuilder.h */,
+				FA83BA6119A8F37E00423F16 /* AHBuilder.m */,
+				FA83BA4819A8B98B00423F16 /* AHTweetBuilder.h */,
+				FA83BA4919A8B98B00423F16 /* AHTweetBuilder.m */,
+				FA83BA5819A8EEB500423F16 /* AHTwitterUserBuilder.h */,
+				FA83BA5919A8EEB500423F16 /* AHTwitterUserBuilder.m */,
+			);
+			name = Builders;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -221,6 +277,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA83BA1919A8ABED00423F16 /* InfoPlist.strings in Resources */,
+				FA83BA5219A8DFE500423F16 /* Localizable.strings in Resources */,
 				FA83BA2119A8ABED00423F16 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -229,6 +286,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA83BA5119A8DFAB00423F16 /* Localizable.strings in Resources */,
 				FA83BA3219A8ABED00423F16 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -240,6 +298,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA83BA6219A8F37E00423F16 /* AHBuilder.m in Sources */,
+				FA83BA4419A8B78800423F16 /* AHRealTweet.m in Sources */,
+				FA83BA5A19A8EEB500423F16 /* AHTwitterUserBuilder.m in Sources */,
+				FA83BA4719A8B93700423F16 /* AHRealTwitterUser.m in Sources */,
+				FA83BA4A19A8B98B00423F16 /* AHTweetBuilder.m in Sources */,
 				FA83BA1B19A8ABED00423F16 /* main.m in Sources */,
 				FA83BA1F19A8ABED00423F16 /* AHAppDelegate.m in Sources */,
 			);
@@ -249,6 +312,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA83BA4C19A8BF5600423F16 /* AHTweetBuilderTests.m in Sources */,
+				FA83BA5B19A8EEB500423F16 /* AHTwitterUserBuilder.m in Sources */,
+				FA83BA6319A8F37E00423F16 /* AHBuilder.m in Sources */,
 				FA83BA3419A8ABED00423F16 /* EarlyBirdTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -278,6 +344,15 @@
 				FA83BA3119A8ABED00423F16 /* en */,
 			);
 			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		FA83BA5019A8DCFA00423F16 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FA83BA4F19A8DCFA00423F16 /* en */,
+			);
+			name = Localizable.strings;
+			path = en.lproj;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -438,6 +513,7 @@
 				FA83BA3919A8ABED00423F16 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FA83BA3A19A8ABED00423F16 /* Build configuration list for PBXNativeTarget "EarlyBirdTests" */ = {
 			isa = XCConfigurationList;
@@ -446,6 +522,7 @@
 				FA83BA3C19A8ABED00423F16 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
