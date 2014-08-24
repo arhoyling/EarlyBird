@@ -5,14 +5,14 @@
 //  Created by Alex on 23/08/2014.
 //  Copyright (c) 2014 Alex R. Hoyling. All rights reserved.
 //
-#import <time.h>
 #import "AHTweetBuilder.h"
 #import "AHRealTweet.h"
 #import "AHTwitterUser.h"
 #import "AHTwitterUserBuilder.h"
+#import "NSString+StringAndDate.h"
 
 // Format of tweets date
-NSString * const kDateFormat = @"%a %b %d %H:%M:%S %z %Y";
+NSString * const kTweetDateFormat = @"%a %b %d %H:%M:%S %z %Y";
 
 @implementation AHTweetBuilder
 static NSDictionary * dispatchTable;
@@ -44,10 +44,7 @@ static dispatch_once_t onceToken;
 
 // Convert Json created_at time to our own AHTweet date (NSDate).
 + (NSDate *)date:(NSString *)created_at {
-    struct tm sometime;
-    strptime([created_at UTF8String], [kDateFormat UTF8String], &sometime);
-    
-    return [NSDate dateWithTimeIntervalSince1970:mktime(&sometime)];
+    return [created_at dateUsingFormat:kTweetDateFormat];
 }
 
 // Convert Json text into our own AHTWeet text (no change).

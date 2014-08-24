@@ -6,8 +6,8 @@
 //  Copyright (c) 2014 Alex R. Hoyling. All rights reserved.
 //
 
+@import ObjectiveC.runtime;
 #import "AHBuilder.h"
-#import <objc/runtime.h>
 
 @implementation AHBuilder
 + (id)populateObject:(id)object fromJSON:(NSData *)json withDispatchTable:(NSDictionary *)table {

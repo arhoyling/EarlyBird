@@ -31,8 +31,24 @@
 		FA83BA6319A8F37E00423F16 /* AHBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = FA83BA6119A8F37E00423F16 /* AHBuilder.m */; };
 		FA83BA6919A915E000423F16 /* AHTwitterManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FA83BA6819A915E000423F16 /* AHTwitterManager.m */; };
 		FA83BA6A19A915E000423F16 /* AHTwitterManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FA83BA6819A915E000423F16 /* AHTwitterManager.m */; };
-		FA83BA6D19A916EC00423F16 /* AHTwitterConnector.m in Sources */ = {isa = PBXBuildFile; fileRef = FA83BA6C19A916EC00423F16 /* AHTwitterConnector.m */; };
-		FA83BA6E19A916EC00423F16 /* AHTwitterConnector.m in Sources */ = {isa = PBXBuildFile; fileRef = FA83BA6C19A916EC00423F16 /* AHTwitterConnector.m */; };
+		FA83BA7119A9D8BB00423F16 /* AHTwitterConnector.m in Sources */ = {isa = PBXBuildFile; fileRef = FA83BA7019A9D8BB00423F16 /* AHTwitterConnector.m */; };
+		FA83BA7219A9D8BB00423F16 /* AHTwitterConnector.m in Sources */ = {isa = PBXBuildFile; fileRef = FA83BA7019A9D8BB00423F16 /* AHTwitterConnector.m */; };
+		FA83BA8119A9EC8D00423F16 /* libOCMock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FA83BA7619A9EC8D00423F16 /* libOCMock.a */; };
+		FA83BA8219A9EC8D00423F16 /* libOCMock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FA83BA7619A9EC8D00423F16 /* libOCMock.a */; };
+		FA83BA8619A9F68700423F16 /* AHWidgetController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA83BA8519A9F68700423F16 /* AHWidgetController.m */; };
+		FA83BA8719A9F68700423F16 /* AHWidgetController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA83BA8519A9F68700423F16 /* AHWidgetController.m */; };
+		FA83BA8A19A9F72400423F16 /* AHStreamWidgetController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA83BA8919A9F72400423F16 /* AHStreamWidgetController.m */; };
+		FA83BA8B19A9F72400423F16 /* AHStreamWidgetController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA83BA8919A9F72400423F16 /* AHStreamWidgetController.m */; };
+		FA83BA9019A9F80800423F16 /* AHTweetCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA83BA8E19A9F80800423F16 /* AHTweetCell.m */; };
+		FA83BA9119A9F80800423F16 /* AHTweetCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA83BA8E19A9F80800423F16 /* AHTweetCell.m */; };
+		FA83BA9219A9F80800423F16 /* AHTweetCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA83BA8F19A9F80800423F16 /* AHTweetCell.xib */; };
+		FA83BA9319A9F80800423F16 /* AHTweetCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA83BA8F19A9F80800423F16 /* AHTweetCell.xib */; };
+		FA83BA9619AA17E300423F16 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FA83BA9419AA17E200423F16 /* Localizable.strings */; };
+		FA83BA9719AA17E300423F16 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FA83BA9419AA17E200423F16 /* Localizable.strings */; };
+		FA83BA9C19AA1E1C00423F16 /* NSString+StringAndDate.m in Sources */ = {isa = PBXBuildFile; fileRef = FA83BA9B19AA1E1C00423F16 /* NSString+StringAndDate.m */; };
+		FA83BA9D19AA1E1C00423F16 /* NSString+StringAndDate.m in Sources */ = {isa = PBXBuildFile; fileRef = FA83BA9B19AA1E1C00423F16 /* NSString+StringAndDate.m */; };
+		FA83BAA019AA26B000423F16 /* AHViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA83BA9F19AA26B000423F16 /* AHViewController.m */; };
+		FA83BAA119AA26B000423F16 /* AHViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA83BA9F19AA26B000423F16 /* AHViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,8 +95,30 @@
 		FA83BA6519A9033500423F16 /* utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = utils.h; sourceTree = "<group>"; };
 		FA83BA6719A915E000423F16 /* AHTwitterManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AHTwitterManager.h; path = Social/AHTwitterManager.h; sourceTree = "<group>"; };
 		FA83BA6819A915E000423F16 /* AHTwitterManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AHTwitterManager.m; path = Social/AHTwitterManager.m; sourceTree = "<group>"; };
-		FA83BA6B19A916EC00423F16 /* AHTwitterConnector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AHTwitterConnector.h; path = Social/AHTwitterConnector.h; sourceTree = "<group>"; };
-		FA83BA6C19A916EC00423F16 /* AHTwitterConnector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AHTwitterConnector.m; path = Social/AHTwitterConnector.m; sourceTree = "<group>"; };
+		FA83BA6F19A9D8BB00423F16 /* AHTwitterConnector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AHTwitterConnector.h; path = Social/AHTwitterConnector.h; sourceTree = "<group>"; };
+		FA83BA7019A9D8BB00423F16 /* AHTwitterConnector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AHTwitterConnector.m; path = Social/AHTwitterConnector.m; sourceTree = "<group>"; };
+		FA83BA7619A9EC8D00423F16 /* libOCMock.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libOCMock.a; sourceTree = "<group>"; };
+		FA83BA7819A9EC8D00423F16 /* NSNotificationCenter+OCMAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNotificationCenter+OCMAdditions.h"; sourceTree = "<group>"; };
+		FA83BA7919A9EC8D00423F16 /* OCMArg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMArg.h; sourceTree = "<group>"; };
+		FA83BA7A19A9EC8D00423F16 /* OCMConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMConstraint.h; sourceTree = "<group>"; };
+		FA83BA7B19A9EC8D00423F16 /* OCMLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMLocation.h; sourceTree = "<group>"; };
+		FA83BA7C19A9EC8D00423F16 /* OCMMacroState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMMacroState.h; sourceTree = "<group>"; };
+		FA83BA7D19A9EC8D00423F16 /* OCMock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMock.h; sourceTree = "<group>"; };
+		FA83BA7E19A9EC8D00423F16 /* OCMockObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMockObject.h; sourceTree = "<group>"; };
+		FA83BA7F19A9EC8D00423F16 /* OCMRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMRecorder.h; sourceTree = "<group>"; };
+		FA83BA8019A9EC8D00423F16 /* OCMStubRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMStubRecorder.h; sourceTree = "<group>"; };
+		FA83BA8419A9F68700423F16 /* AHWidgetController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AHWidgetController.h; path = Controllers/AHWidgetController.h; sourceTree = "<group>"; };
+		FA83BA8519A9F68700423F16 /* AHWidgetController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AHWidgetController.m; path = Controllers/AHWidgetController.m; sourceTree = "<group>"; };
+		FA83BA8819A9F72400423F16 /* AHStreamWidgetController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AHStreamWidgetController.h; path = Controllers/AHStreamWidgetController.h; sourceTree = "<group>"; };
+		FA83BA8919A9F72400423F16 /* AHStreamWidgetController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AHStreamWidgetController.m; path = Controllers/AHStreamWidgetController.m; sourceTree = "<group>"; };
+		FA83BA8D19A9F80800423F16 /* AHTweetCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AHTweetCell.h; path = Views/AHTweetCell.h; sourceTree = "<group>"; };
+		FA83BA8E19A9F80800423F16 /* AHTweetCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AHTweetCell.m; path = Views/AHTweetCell.m; sourceTree = "<group>"; };
+		FA83BA8F19A9F80800423F16 /* AHTweetCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AHTweetCell.xib; path = Views/AHTweetCell.xib; sourceTree = "<group>"; };
+		FA83BA9519AA17E200423F16 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		FA83BA9919AA1B7400423F16 /* NSString+StringAndDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+StringAndDate.h"; path = "Utilities/NSString+StringAndDate.h"; sourceTree = "<group>"; };
+		FA83BA9B19AA1E1C00423F16 /* NSString+StringAndDate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+StringAndDate.m"; path = "Utilities/NSString+StringAndDate.m"; sourceTree = "<group>"; };
+		FA83BA9E19AA26B000423F16 /* AHViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AHViewController.h; path = Controllers/AHViewController.h; sourceTree = "<group>"; };
+		FA83BA9F19AA26B000423F16 /* AHViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AHViewController.m; path = Controllers/AHViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +127,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA83BA1119A8ABED00423F16 /* CoreGraphics.framework in Frameworks */,
+				FA83BA8119A9EC8D00423F16 /* libOCMock.a in Frameworks */,
 				FA83BA1319A8ABED00423F16 /* UIKit.framework in Frameworks */,
 				FA83BA0F19A8ABED00423F16 /* Foundation.framework in Frameworks */,
 			);
@@ -99,6 +138,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA83BA2819A8ABED00423F16 /* XCTest.framework in Frameworks */,
+				FA83BA8219A9EC8D00423F16 /* libOCMock.a in Frameworks */,
 				FA83BA2A19A8ABED00423F16 /* UIKit.framework in Frameworks */,
 				FA83BA2919A8ABED00423F16 /* Foundation.framework in Frameworks */,
 			);
@@ -111,8 +151,10 @@
 			isa = PBXGroup;
 			children = (
 				FA83BA1419A8ABED00423F16 /* EarlyBird */,
+				FA83BA1519A8ABED00423F16 /* Supporting Files */,
 				FA83BA2D19A8ABED00423F16 /* EarlyBirdTests */,
 				FA83BA0D19A8ABEC00423F16 /* Frameworks */,
+				FA83BA7519A9EC8D00423F16 /* Libraries */,
 				FA83BA0C19A8ABEC00423F16 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -140,12 +182,14 @@
 		FA83BA1419A8ABED00423F16 /* EarlyBird */ = {
 			isa = PBXGroup;
 			children = (
-				FA83BA6619A9140F00423F16 /* Twitter */,
-				FA83BA3D19A8AD9E00423F16 /* Model */,
 				FA83BA1D19A8ABED00423F16 /* AHAppDelegate.h */,
 				FA83BA1E19A8ABED00423F16 /* AHAppDelegate.m */,
 				FA83BA2019A8ABED00423F16 /* Images.xcassets */,
-				FA83BA1519A8ABED00423F16 /* Supporting Files */,
+				FA83BA8319A9F66900423F16 /* Controllers */,
+				FA83BA3D19A8AD9E00423F16 /* Model */,
+				FA83BA6619A9140F00423F16 /* Social */,
+				FA83BA8C19A9F7BD00423F16 /* Views */,
+				FA83BA9819AA1AF300423F16 /* Utilities */,
 			);
 			path = EarlyBird;
 			sourceTree = "<group>";
@@ -153,6 +197,7 @@
 		FA83BA1519A8ABED00423F16 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				FA83BA9419AA17E200423F16 /* Localizable.strings */,
 				FA83BA1619A8ABED00423F16 /* EarlyBird-Info.plist */,
 				FA83BA1719A8ABED00423F16 /* InfoPlist.strings */,
 				FA83BA1A19A8ABED00423F16 /* main.m */,
@@ -160,13 +205,14 @@
 				FA83BA6519A9033500423F16 /* utils.h */,
 			);
 			name = "Supporting Files";
+			path = EarlyBird;
 			sourceTree = "<group>";
 		};
 		FA83BA2D19A8ABED00423F16 /* EarlyBirdTests */ = {
 			isa = PBXGroup;
 			children = (
-				FA83BA3319A8ABED00423F16 /* EarlyBirdTests.m */,
 				FA83BA4B19A8BF5600423F16 /* AHTweetBuilderTests.m */,
+				FA83BA3319A8ABED00423F16 /* EarlyBirdTests.m */,
 				FA83BA2E19A8ABED00423F16 /* Supporting Files */,
 			);
 			path = EarlyBirdTests;
@@ -209,15 +255,72 @@
 			name = Builders;
 			sourceTree = "<group>";
 		};
-		FA83BA6619A9140F00423F16 /* Twitter */ = {
+		FA83BA6619A9140F00423F16 /* Social */ = {
 			isa = PBXGroup;
 			children = (
-				FA83BA6B19A916EC00423F16 /* AHTwitterConnector.h */,
-				FA83BA6C19A916EC00423F16 /* AHTwitterConnector.m */,
 				FA83BA6719A915E000423F16 /* AHTwitterManager.h */,
 				FA83BA6819A915E000423F16 /* AHTwitterManager.m */,
+				FA83BA6F19A9D8BB00423F16 /* AHTwitterConnector.h */,
+				FA83BA7019A9D8BB00423F16 /* AHTwitterConnector.m */,
 			);
-			name = Twitter;
+			name = Social;
+			sourceTree = "<group>";
+		};
+		FA83BA7519A9EC8D00423F16 /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				FA83BA7619A9EC8D00423F16 /* libOCMock.a */,
+				FA83BA7719A9EC8D00423F16 /* OCMock */,
+			);
+			path = Libraries;
+			sourceTree = "<group>";
+		};
+		FA83BA7719A9EC8D00423F16 /* OCMock */ = {
+			isa = PBXGroup;
+			children = (
+				FA83BA7819A9EC8D00423F16 /* NSNotificationCenter+OCMAdditions.h */,
+				FA83BA7919A9EC8D00423F16 /* OCMArg.h */,
+				FA83BA7A19A9EC8D00423F16 /* OCMConstraint.h */,
+				FA83BA7B19A9EC8D00423F16 /* OCMLocation.h */,
+				FA83BA7C19A9EC8D00423F16 /* OCMMacroState.h */,
+				FA83BA7D19A9EC8D00423F16 /* OCMock.h */,
+				FA83BA7E19A9EC8D00423F16 /* OCMockObject.h */,
+				FA83BA7F19A9EC8D00423F16 /* OCMRecorder.h */,
+				FA83BA8019A9EC8D00423F16 /* OCMStubRecorder.h */,
+			);
+			path = OCMock;
+			sourceTree = "<group>";
+		};
+		FA83BA8319A9F66900423F16 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				FA83BA8819A9F72400423F16 /* AHStreamWidgetController.h */,
+				FA83BA8919A9F72400423F16 /* AHStreamWidgetController.m */,
+				FA83BA9E19AA26B000423F16 /* AHViewController.h */,
+				FA83BA9F19AA26B000423F16 /* AHViewController.m */,
+				FA83BA8419A9F68700423F16 /* AHWidgetController.h */,
+				FA83BA8519A9F68700423F16 /* AHWidgetController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		FA83BA8C19A9F7BD00423F16 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FA83BA8D19A9F80800423F16 /* AHTweetCell.h */,
+				FA83BA8E19A9F80800423F16 /* AHTweetCell.m */,
+				FA83BA8F19A9F80800423F16 /* AHTweetCell.xib */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		FA83BA9819AA1AF300423F16 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				FA83BA9919AA1B7400423F16 /* NSString+StringAndDate.h */,
+				FA83BA9B19AA1E1C00423F16 /* NSString+StringAndDate.m */,
+			);
+			name = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -298,7 +401,9 @@
 			files = (
 				FA83BA1919A8ABED00423F16 /* InfoPlist.strings in Resources */,
 				FA83BA5219A8DFE500423F16 /* Localizable.strings in Resources */,
+				FA83BA9219A9F80800423F16 /* AHTweetCell.xib in Resources */,
 				FA83BA2119A8ABED00423F16 /* Images.xcassets in Resources */,
+				FA83BA9619AA17E300423F16 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -306,7 +411,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA83BA9719AA17E300423F16 /* Localizable.strings in Resources */,
 				FA83BA5119A8DFAB00423F16 /* Localizable.strings in Resources */,
+				FA83BA9319A9F80800423F16 /* AHTweetCell.xib in Resources */,
 				FA83BA3219A8ABED00423F16 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -320,11 +427,16 @@
 			files = (
 				FA83BA6219A8F37E00423F16 /* AHBuilder.m in Sources */,
 				FA83BA4419A8B78800423F16 /* AHRealTweet.m in Sources */,
+				FA83BA9C19AA1E1C00423F16 /* NSString+StringAndDate.m in Sources */,
+				FA83BAA019AA26B000423F16 /* AHViewController.m in Sources */,
+				FA83BA8619A9F68700423F16 /* AHWidgetController.m in Sources */,
 				FA83BA5A19A8EEB500423F16 /* AHTwitterUserBuilder.m in Sources */,
 				FA83BA4719A8B93700423F16 /* AHRealTwitterUser.m in Sources */,
+				FA83BA8A19A9F72400423F16 /* AHStreamWidgetController.m in Sources */,
+				FA83BA9019A9F80800423F16 /* AHTweetCell.m in Sources */,
 				FA83BA6919A915E000423F16 /* AHTwitterManager.m in Sources */,
 				FA83BA4A19A8B98B00423F16 /* AHTweetBuilder.m in Sources */,
-				FA83BA6D19A916EC00423F16 /* AHTwitterConnector.m in Sources */,
+				FA83BA7119A9D8BB00423F16 /* AHTwitterConnector.m in Sources */,
 				FA83BA1B19A8ABED00423F16 /* main.m in Sources */,
 				FA83BA1F19A8ABED00423F16 /* AHAppDelegate.m in Sources */,
 			);
@@ -334,11 +446,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA83BA6E19A916EC00423F16 /* AHTwitterConnector.m in Sources */,
+				FA83BA7219A9D8BB00423F16 /* AHTwitterConnector.m in Sources */,
 				FA83BA4C19A8BF5600423F16 /* AHTweetBuilderTests.m in Sources */,
+				FA83BA8B19A9F72400423F16 /* AHStreamWidgetController.m in Sources */,
+				FA83BA9119A9F80800423F16 /* AHTweetCell.m in Sources */,
 				FA83BA5B19A8EEB500423F16 /* AHTwitterUserBuilder.m in Sources */,
+				FA83BAA119AA26B000423F16 /* AHViewController.m in Sources */,
 				FA83BA6A19A915E000423F16 /* AHTwitterManager.m in Sources */,
 				FA83BA6319A8F37E00423F16 /* AHBuilder.m in Sources */,
+				FA83BA8719A9F68700423F16 /* AHWidgetController.m in Sources */,
+				FA83BA9D19AA1E1C00423F16 /* NSString+StringAndDate.m in Sources */,
 				FA83BA3419A8ABED00423F16 /* EarlyBirdTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -377,6 +494,14 @@
 			);
 			name = Localizable.strings;
 			path = en.lproj;
+			sourceTree = "<group>";
+		};
+		FA83BA9419AA17E200423F16 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FA83BA9519AA17E200423F16 /* en */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -460,6 +585,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "EarlyBird/EarlyBird-Prefix.pch";
 				INFOPLIST_FILE = "EarlyBird/EarlyBird-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Libraries",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -473,6 +602,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "EarlyBird/EarlyBird-Prefix.pch";
 				INFOPLIST_FILE = "EarlyBird/EarlyBird-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Libraries",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -493,7 +626,22 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(PROJECT_DIR)/Libraries",
+				);
 				INFOPLIST_FILE = "EarlyBirdTests/EarlyBirdTests-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Libraries",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					XCTest,
+					"-ObjC",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
@@ -511,7 +659,22 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "EarlyBird/EarlyBird-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(PROJECT_DIR)/Libraries",
+				);
 				INFOPLIST_FILE = "EarlyBirdTests/EarlyBirdTests-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Libraries",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					XCTest,
+					"-ObjC",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;

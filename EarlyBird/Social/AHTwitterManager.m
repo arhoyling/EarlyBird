@@ -5,17 +5,24 @@
 //  Created by Alex on 23/08/2014.
 //  Copyright (c) 2014 Alex R. Hoyling. All rights reserved.
 //
+@import Accounts;
 
 #import "AHTwitterManager.h"
 #import "AHTweetBuilder.h"
 
+@interface AHTwitterManager ()
+@property (nonatomic) ACAccount       *account;
+@property (nonatomic, readwrite) BOOL  watching;
+@end
+
+#pragma mark -
 @implementation AHTwitterManager
-- (id)initWithConnector:(AHTwitterConnector *)connector delegate:(id<AHTwitterManagerDelegate>)delegate{
+- (id)initWithDelegate:(id<AHTwitterManagerDelegate>)delegate {
     self = [super init];
     
     if (self) {
-        _connector = connector;
         _delegate = delegate;
+        _watching = NO;
         
         [self checkAccountAccess];
     }
@@ -23,22 +30,32 @@
     return self;
 }
 
-- (void)fetchTweetsWithHashtag:(NSString *)hashtag {
-    [_connector closeConnection];
-    [_connector openPublicStreamConnectionWithKeyword:hashtag];
+- (void)watchPublicStreamWithHashtag:(NSString *)hashtag {
+    if (!_connector || ![_connector openStreamConnectionWithAccount:_account keyword:hashtag]) {
+        _watching = NO;
+        [_delegate couldNotWatchStream];
+    } else {
+        _watching = YES;
+    }
+}
+
+- (void)stopWatchingPublicStream {
+    if (_connector) {
+        [_connector closeConnection];
+        _watching = NO;
+    }
 }
 
 #pragma mark - AHTwitterConnectorDelegate
-- (void)didReceiveData:(NSData *)json {
-    NSObject<AHTweet> *tweet = [AHTweetBuilder tweetFromJSON:json];
-
+- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
+    NSObject<AHTweet> *tweet = [AHTweetBuilder tweetFromJSON:data];
+    
     // Warn delegate on the main thread.
     dispatch_async(dispatch_get_main_queue(), ^(void) {
         [_delegate didReceiveTweet:tweet];
     });
 }
 
-#pragma mark - Utilities
 - (void)checkAccountAccess {
     ACAccountStore *accountStore = [[ACAccountStore alloc] init];
     ACAccountType *twitterAccountType = [accountStore accountTypeWithAccountTypeIdentifier:ACAccountTypeIdentifierTwitter];
@@ -58,7 +75,7 @@
              }
              
              // Initialize connector and notify delegate
-             [_connector setAccount:[accounts firstObject]];
+             _account = [accounts firstObject];
              [_delegate accessGranted];
          });
      }];

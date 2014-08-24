@@ -1,0 +1,17 @@
+/* 
+  Localizable.strings
+  EarlyBird
+
+  Created by Alex on 24/08/2014.
+  Copyright (c) 2014 Alex R. Hoyling. All rights reserved.
+*/
+
+"Account.AccessFailed.Title" = "Access Failed";
+"Account.AccessFailed.Message" = "Could not find a valid twitter account. Please set up an account and try again.
+Settings > Twitter > Add Account";
+"Account.AccessFailed.Cancel" = "Try again!";
+"Stream.ConnectionFailed.Title" = "Connection failed";
+"Stream.ConnectionFailed.Message %@" = "Could not watch public stream for hashtag %@";
+"Stream.ConnectionFailed.Cancel" = "OK";
+
+"%d Cell.Retweets" = "%d retweets";

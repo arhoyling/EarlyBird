@@ -2,26 +2,26 @@
 //  AHTwitterConnector.h
 //  EarlyBird
 //
-//  Created by Alex on 23/08/2014.
+//  Created by Alex on 24/08/2014.
 //  Copyright (c) 2014 Alex R. Hoyling. All rights reserved.
 //
 @import Accounts;
 
-@protocol AHTwitterConnectorDelegate
-- (void)didReceiveData:(NSData *)json;
+// AHTwitterConnectorDelegate is a wrapper for NSURLConnectionDataDelegate.
+@protocol AHTwitterConnectorDelegate <NSURLConnectionDataDelegate>
+- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data;
 @end
 
-@interface AHTwitterConnector : NSObject <NSURLConnectionDataDelegate>
-@property (nonatomic, weak) id<AHTwitterConnectorDelegate>  delegate;
-@property (nonatomic) ACAccount                            *account;
+@interface AHTwitterConnector : NSObject
+@property (nonatomic, weak) id<AHTwitterConnectorDelegate>   delegate;
 
 - (id)initWithDelegate:(id<AHTwitterConnectorDelegate>)delegate;
 
-// Open a twitter public stream connection with the given keyword. Twitter stream api only allows one connection at a
-// time per user.
-// Any received data will be notified to the delegate.
-- (void)openPublicStreamConnectionWithKeyword:(NSString *)keyword;
+// Open a public stream connection to Twitter's API with the given account, filtering results
+// with the specified keyword.
+// This method returns YES if the connection was successfully opened, NO otherwise.
+- (BOOL)openStreamConnectionWithAccount:(ACAccount *)account keyword:(NSString *)keyword;
 
-// Close connection.
+// Cancel the current connection if any.
 - (void)closeConnection;
 @end

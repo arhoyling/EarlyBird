@@ -2,23 +2,23 @@
 //  AHTwitterConnector.m
 //  EarlyBird
 //
-//  Created by Alex on 23/08/2014.
+//  Created by Alex on 24/08/2014.
 //  Copyright (c) 2014 Alex R. Hoyling. All rights reserved.
 //
-
-#import "AHTwitterConnector.h"
 #import <Social/SLRequest.h>
+#import "AHTwitterConnector.h"
 
 @interface AHTwitterConnector ()
-@property (nonatomic) NSURLConnection   *connection;
 @property (nonatomic) NSOperationQueue  *queue;
+@property (nonatomic) NSURLConnection   *connection;
 @end
 
 NSString * const kTrackKey   = @"track";
 NSString * const kTwitterEndPoint = @"https://stream.twitter.com/1.1/statuses/filter.json";
 
+#pragma mark -
 @implementation AHTwitterConnector
-- (id)initWithDelegate:(id<AHTwitterConnectorDelegate>)delegate {
+- (id)initWithDelegate:(id<AHTwitterConnectorDelegate>)delegate; {
     self = [super init];
     
     if (self) {
@@ -29,12 +29,8 @@ NSString * const kTwitterEndPoint = @"https://stream.twitter.com/1.1/statuses/fi
     return self;
 }
 
-- (void)openPublicStreamConnectionWithKeyword:(NSString *)keyword {
-    if (_account == nil) {
-        DLog(@"Failed to open connection. No valid account.");
-        return;
-    }
-    
+- (BOOL)openStreamConnectionWithAccount:(ACAccount *)account keyword:(NSString *)keyword {
+    // Twitter stream api only allows one connection at a time per user.
     NSDictionary *params = @{ kTrackKey : keyword};
     
     //  The endpoint that we wish to call
@@ -47,28 +43,28 @@ NSString * const kTwitterEndPoint = @"https://stream.twitter.com/1.1/statuses/fi
                                                 parameters:params];
     
     // Attach the account object to this request
-    [request setAccount:_account];
+    [request setAccount:account];
+    // Get a signed version of the request to be consumed by an NSURLConnection
+    NSURLRequest *urlRequest = [request preparedURLRequest];
+    
+    // Stop here if the request cannot be handled.
+    if (![NSURLConnection canHandleRequest:urlRequest])
+        return NO;
     
     // Open the streaming connection with Twitter
     dispatch_async(dispatch_get_main_queue(), ^(void) {
-        _connection = [NSURLConnection connectionWithRequest:[request preparedURLRequest]
-                                                    delegate:self];
+        _connection = [NSURLConnection connectionWithRequest:urlRequest delegate:_delegate];
+        
         // Ensure that the delegate callback will be called on a background queue.
         [_connection setDelegateQueue:_queue];
         [_connection start];
     });
+    
+    return YES;
 }
 
 - (void)closeConnection {
-    if (_connection) {
+    if (_connection)
         [_connection cancel];
-        _connection = nil;
-    }
-}
-
-#pragma mark - NSUrlConnectionDataDelegate
-- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
-    if (_delegate && data)
-        [_delegate didReceiveData:data];
 }
 @end
