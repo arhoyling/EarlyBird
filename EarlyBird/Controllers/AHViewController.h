@@ -7,6 +7,5 @@
 //
 #import "AHTwitterManager.h"
 
-@interface AHViewController : UIViewController <AHTwitterManagerDelegate>
-
+@interface AHViewController : UIViewController <AHTwitterManagerDelegate, UITextFieldDelegate>
 @end

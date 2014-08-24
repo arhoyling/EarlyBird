@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA2CF64019AA2FBD003E93BA /* AHTweetQueryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA2CF63F19AA2FBD003E93BA /* AHTweetQueryView.xib */; };
+		FA2CF64319AA340A003E93BA /* AHTweetQueryView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2CF64219AA340A003E93BA /* AHTweetQueryView.m */; };
 		FA83BA0F19A8ABED00423F16 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA83BA0E19A8ABEC00423F16 /* Foundation.framework */; };
 		FA83BA1119A8ABED00423F16 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA83BA1019A8ABED00423F16 /* CoreGraphics.framework */; };
 		FA83BA1319A8ABED00423F16 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA83BA1219A8ABED00423F16 /* UIKit.framework */; };
@@ -62,6 +64,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FA2CF63F19AA2FBD003E93BA /* AHTweetQueryView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AHTweetQueryView.xib; path = Views/AHTweetQueryView.xib; sourceTree = "<group>"; };
+		FA2CF64119AA340A003E93BA /* AHTweetQueryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AHTweetQueryView.h; path = Views/AHTweetQueryView.h; sourceTree = "<group>"; };
+		FA2CF64219AA340A003E93BA /* AHTweetQueryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AHTweetQueryView.m; path = Views/AHTweetQueryView.m; sourceTree = "<group>"; };
 		FA83BA0B19A8ABEC00423F16 /* EarlyBird.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EarlyBird.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA83BA0E19A8ABEC00423F16 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		FA83BA1019A8ABED00423F16 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -310,6 +315,9 @@
 				FA83BA8D19A9F80800423F16 /* AHTweetCell.h */,
 				FA83BA8E19A9F80800423F16 /* AHTweetCell.m */,
 				FA83BA8F19A9F80800423F16 /* AHTweetCell.xib */,
+				FA2CF64119AA340A003E93BA /* AHTweetQueryView.h */,
+				FA2CF64219AA340A003E93BA /* AHTweetQueryView.m */,
+				FA2CF63F19AA2FBD003E93BA /* AHTweetQueryView.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -403,6 +411,7 @@
 				FA83BA5219A8DFE500423F16 /* Localizable.strings in Resources */,
 				FA83BA9219A9F80800423F16 /* AHTweetCell.xib in Resources */,
 				FA83BA2119A8ABED00423F16 /* Images.xcassets in Resources */,
+				FA2CF64019AA2FBD003E93BA /* AHTweetQueryView.xib in Resources */,
 				FA83BA9619AA17E300423F16 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -437,6 +446,7 @@
 				FA83BA6919A915E000423F16 /* AHTwitterManager.m in Sources */,
 				FA83BA4A19A8B98B00423F16 /* AHTweetBuilder.m in Sources */,
 				FA83BA7119A9D8BB00423F16 /* AHTwitterConnector.m in Sources */,
+				FA2CF64319AA340A003E93BA /* AHTweetQueryView.m in Sources */,
 				FA83BA1B19A8ABED00423F16 /* main.m in Sources */,
 				FA83BA1F19A8ABED00423F16 /* AHAppDelegate.m in Sources */,
 			);

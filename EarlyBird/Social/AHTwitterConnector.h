@@ -8,11 +8,12 @@
 @import Accounts;
 
 // AHTwitterConnectorDelegate is a wrapper for NSURLConnectionDataDelegate.
-@protocol AHTwitterConnectorDelegate <NSURLConnectionDataDelegate>
-- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data;
+@protocol AHTwitterConnectorDelegate
+- (void)didReceiveData:(NSData *)data;
+- (void)didFailWithError:(NSError *)error;
 @end
 
-@interface AHTwitterConnector : NSObject
+@interface AHTwitterConnector : NSObject <NSURLConnectionDataDelegate>
 @property (nonatomic, weak) id<AHTwitterConnectorDelegate>   delegate;
 
 - (id)initWithDelegate:(id<AHTwitterConnectorDelegate>)delegate;

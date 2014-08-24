@@ -15,6 +15,8 @@
 @property (nonatomic, readwrite) BOOL  watching;
 @end
 
+enum { kResetDelay = 20 };
+
 #pragma mark -
 @implementation AHTwitterManager
 - (id)initWithDelegate:(id<AHTwitterManagerDelegate>)delegate {
@@ -31,6 +33,7 @@
 }
 
 - (void)watchPublicStreamWithHashtag:(NSString *)hashtag {
+    DLog(@"Start watching public stream for hashtag %@", hashtag);
     if (!_connector || ![_connector openStreamConnectionWithAccount:_account keyword:hashtag]) {
         _watching = NO;
         [_delegate couldNotWatchStream];
@@ -47,12 +50,21 @@
 }
 
 #pragma mark - AHTwitterConnectorDelegate
-- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
+- (void)didReceiveData:(NSData *)data {
     NSObject<AHTweet> *tweet = [AHTweetBuilder tweetFromJSON:data];
     
     // Warn delegate on the main thread.
     dispatch_async(dispatch_get_main_queue(), ^(void) {
         [_delegate didReceiveTweet:tweet];
+    });
+}
+
+- (void)didReachRateLimit {
+    [_connector closeConnection];
+    DLog(@"Connection reached rate limit for this user.");
+    
+    dispatch_async(dispatch_get_main_queue(), ^(void) {
+        [_delegate couldNotWatchStream];
     });
 }
 
@@ -69,7 +81,6 @@
              
              // Forward error to delegate
              if (!granted || [accounts count] == 0) {
-                 DLog(@"Access to account failed. Error: %@", error);
                  [_delegate accessDidFailWithError:error];
                  return;
              }
