@@ -18,7 +18,6 @@
     
     if (error) {
         DLog(@"Failed to parse Json while creating %@ object. Error: %@", NSStringFromClass([object class]), [error description]);
-        DLog(@"### This is the json: \n%@\n\n", [[NSString alloc]initWithData:json encoding:NSUTF8StringEncoding]);
         return nil;
     }
     

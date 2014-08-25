@@ -114,7 +114,6 @@ NSString * const kHashChar = @"#";
 }
 
 - (void)didReceiveTweet:(NSObject<AHTweet> *)tweet {
-    NSLog(@"Tweet: %@", tweet.text);
     if (tweet)
         [_streamWidget addTweet:tweet];
 }

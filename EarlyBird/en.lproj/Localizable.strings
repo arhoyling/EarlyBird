@@ -15,3 +15,5 @@ Settings > Twitter > Add Account";
 "Stream.ConnectionFailed.Cancel" = "OK";
 
 "%d Cell.Retweets" = "%d retweets";
+
+"Test.ValidTweetJson" = "test";

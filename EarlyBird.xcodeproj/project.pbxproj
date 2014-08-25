@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		FA2CF64019AA2FBD003E93BA /* AHTweetQueryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA2CF63F19AA2FBD003E93BA /* AHTweetQueryView.xib */; };
 		FA2CF64319AA340A003E93BA /* AHTweetQueryView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2CF64219AA340A003E93BA /* AHTweetQueryView.m */; };
+		FA2CF64519AA782B003E93BA /* AHTwitterConnectorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2CF64419AA782B003E93BA /* AHTwitterConnectorTests.m */; };
+		FA2CF64C19AA81D5003E93BA /* TestData.strings in Resources */ = {isa = PBXBuildFile; fileRef = FA2CF64A19AA81D5003E93BA /* TestData.strings */; };
+		FA2CF65219AA843F003E93BA /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FA2CF65019AA843F003E93BA /* Localizable.strings */; };
 		FA83BA0F19A8ABED00423F16 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA83BA0E19A8ABEC00423F16 /* Foundation.framework */; };
 		FA83BA1119A8ABED00423F16 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA83BA1019A8ABED00423F16 /* CoreGraphics.framework */; };
 		FA83BA1319A8ABED00423F16 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA83BA1219A8ABED00423F16 /* UIKit.framework */; };
@@ -25,8 +28,6 @@
 		FA83BA4719A8B93700423F16 /* AHRealTwitterUser.m in Sources */ = {isa = PBXBuildFile; fileRef = FA83BA4619A8B93700423F16 /* AHRealTwitterUser.m */; };
 		FA83BA4A19A8B98B00423F16 /* AHTweetBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = FA83BA4919A8B98B00423F16 /* AHTweetBuilder.m */; };
 		FA83BA4C19A8BF5600423F16 /* AHTweetBuilderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FA83BA4B19A8BF5600423F16 /* AHTweetBuilderTests.m */; };
-		FA83BA5119A8DFAB00423F16 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FA83BA5019A8DCFA00423F16 /* Localizable.strings */; };
-		FA83BA5219A8DFE500423F16 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FA83BA5019A8DCFA00423F16 /* Localizable.strings */; };
 		FA83BA5A19A8EEB500423F16 /* AHTwitterUserBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = FA83BA5919A8EEB500423F16 /* AHTwitterUserBuilder.m */; };
 		FA83BA5B19A8EEB500423F16 /* AHTwitterUserBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = FA83BA5919A8EEB500423F16 /* AHTwitterUserBuilder.m */; };
 		FA83BA6219A8F37E00423F16 /* AHBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = FA83BA6119A8F37E00423F16 /* AHBuilder.m */; };
@@ -44,9 +45,6 @@
 		FA83BA9019A9F80800423F16 /* AHTweetCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA83BA8E19A9F80800423F16 /* AHTweetCell.m */; };
 		FA83BA9119A9F80800423F16 /* AHTweetCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA83BA8E19A9F80800423F16 /* AHTweetCell.m */; };
 		FA83BA9219A9F80800423F16 /* AHTweetCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA83BA8F19A9F80800423F16 /* AHTweetCell.xib */; };
-		FA83BA9319A9F80800423F16 /* AHTweetCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA83BA8F19A9F80800423F16 /* AHTweetCell.xib */; };
-		FA83BA9619AA17E300423F16 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FA83BA9419AA17E200423F16 /* Localizable.strings */; };
-		FA83BA9719AA17E300423F16 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FA83BA9419AA17E200423F16 /* Localizable.strings */; };
 		FA83BA9C19AA1E1C00423F16 /* NSString+StringAndDate.m in Sources */ = {isa = PBXBuildFile; fileRef = FA83BA9B19AA1E1C00423F16 /* NSString+StringAndDate.m */; };
 		FA83BA9D19AA1E1C00423F16 /* NSString+StringAndDate.m in Sources */ = {isa = PBXBuildFile; fileRef = FA83BA9B19AA1E1C00423F16 /* NSString+StringAndDate.m */; };
 		FA83BAA019AA26B000423F16 /* AHViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA83BA9F19AA26B000423F16 /* AHViewController.m */; };
@@ -67,6 +65,9 @@
 		FA2CF63F19AA2FBD003E93BA /* AHTweetQueryView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AHTweetQueryView.xib; path = Views/AHTweetQueryView.xib; sourceTree = "<group>"; };
 		FA2CF64119AA340A003E93BA /* AHTweetQueryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AHTweetQueryView.h; path = Views/AHTweetQueryView.h; sourceTree = "<group>"; };
 		FA2CF64219AA340A003E93BA /* AHTweetQueryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AHTweetQueryView.m; path = Views/AHTweetQueryView.m; sourceTree = "<group>"; };
+		FA2CF64419AA782B003E93BA /* AHTwitterConnectorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AHTwitterConnectorTests.m; sourceTree = "<group>"; };
+		FA2CF64B19AA81D5003E93BA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/TestData.strings; sourceTree = "<group>"; };
+		FA2CF65119AA843F003E93BA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		FA83BA0B19A8ABEC00423F16 /* EarlyBird.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EarlyBird.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA83BA0E19A8ABEC00423F16 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		FA83BA1019A8ABED00423F16 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -91,8 +92,7 @@
 		FA83BA4619A8B93700423F16 /* AHRealTwitterUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AHRealTwitterUser.m; path = Model/AHRealTwitterUser.m; sourceTree = "<group>"; };
 		FA83BA4819A8B98B00423F16 /* AHTweetBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AHTweetBuilder.h; path = Model/AHTweetBuilder.h; sourceTree = "<group>"; };
 		FA83BA4919A8B98B00423F16 /* AHTweetBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AHTweetBuilder.m; path = Model/AHTweetBuilder.m; sourceTree = "<group>"; };
-		FA83BA4B19A8BF5600423F16 /* AHTweetBuilderTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AHTweetBuilderTests.m; path = ../../Test/EarlyBirdTests/AHTweetBuilderTests.m; sourceTree = "<group>"; };
-		FA83BA4F19A8DCFA00423F16 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		FA83BA4B19A8BF5600423F16 /* AHTweetBuilderTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AHTweetBuilderTests.m; sourceTree = "<group>"; };
 		FA83BA5819A8EEB500423F16 /* AHTwitterUserBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AHTwitterUserBuilder.h; path = Model/AHTwitterUserBuilder.h; sourceTree = "<group>"; };
 		FA83BA5919A8EEB500423F16 /* AHTwitterUserBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AHTwitterUserBuilder.m; path = Model/AHTwitterUserBuilder.m; sourceTree = "<group>"; };
 		FA83BA6019A8F37E00423F16 /* AHBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AHBuilder.h; path = Model/AHBuilder.h; sourceTree = "<group>"; };
@@ -119,7 +119,6 @@
 		FA83BA8D19A9F80800423F16 /* AHTweetCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AHTweetCell.h; path = Views/AHTweetCell.h; sourceTree = "<group>"; };
 		FA83BA8E19A9F80800423F16 /* AHTweetCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AHTweetCell.m; path = Views/AHTweetCell.m; sourceTree = "<group>"; };
 		FA83BA8F19A9F80800423F16 /* AHTweetCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AHTweetCell.xib; path = Views/AHTweetCell.xib; sourceTree = "<group>"; };
-		FA83BA9519AA17E200423F16 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		FA83BA9919AA1B7400423F16 /* NSString+StringAndDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+StringAndDate.h"; path = "Utilities/NSString+StringAndDate.h"; sourceTree = "<group>"; };
 		FA83BA9B19AA1E1C00423F16 /* NSString+StringAndDate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+StringAndDate.m"; path = "Utilities/NSString+StringAndDate.m"; sourceTree = "<group>"; };
 		FA83BA9E19AA26B000423F16 /* AHViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AHViewController.h; path = Controllers/AHViewController.h; sourceTree = "<group>"; };
@@ -202,7 +201,7 @@
 		FA83BA1519A8ABED00423F16 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				FA83BA9419AA17E200423F16 /* Localizable.strings */,
+				FA2CF65019AA843F003E93BA /* Localizable.strings */,
 				FA83BA1619A8ABED00423F16 /* EarlyBird-Info.plist */,
 				FA83BA1719A8ABED00423F16 /* InfoPlist.strings */,
 				FA83BA1A19A8ABED00423F16 /* main.m */,
@@ -216,6 +215,7 @@
 		FA83BA2D19A8ABED00423F16 /* EarlyBirdTests */ = {
 			isa = PBXGroup;
 			children = (
+				FA2CF64419AA782B003E93BA /* AHTwitterConnectorTests.m */,
 				FA83BA4B19A8BF5600423F16 /* AHTweetBuilderTests.m */,
 				FA83BA3319A8ABED00423F16 /* EarlyBirdTests.m */,
 				FA83BA2E19A8ABED00423F16 /* Supporting Files */,
@@ -226,9 +226,9 @@
 		FA83BA2E19A8ABED00423F16 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				FA2CF64A19AA81D5003E93BA /* TestData.strings */,
 				FA83BA2F19A8ABED00423F16 /* EarlyBirdTests-Info.plist */,
 				FA83BA3019A8ABED00423F16 /* InfoPlist.strings */,
-				FA83BA5019A8DCFA00423F16 /* Localizable.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -408,11 +408,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA83BA1919A8ABED00423F16 /* InfoPlist.strings in Resources */,
-				FA83BA5219A8DFE500423F16 /* Localizable.strings in Resources */,
+				FA2CF65219AA843F003E93BA /* Localizable.strings in Resources */,
 				FA83BA9219A9F80800423F16 /* AHTweetCell.xib in Resources */,
 				FA83BA2119A8ABED00423F16 /* Images.xcassets in Resources */,
 				FA2CF64019AA2FBD003E93BA /* AHTweetQueryView.xib in Resources */,
-				FA83BA9619AA17E300423F16 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -420,10 +419,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA83BA9719AA17E300423F16 /* Localizable.strings in Resources */,
-				FA83BA5119A8DFAB00423F16 /* Localizable.strings in Resources */,
-				FA83BA9319A9F80800423F16 /* AHTweetCell.xib in Resources */,
 				FA83BA3219A8ABED00423F16 /* InfoPlist.strings in Resources */,
+				FA2CF64C19AA81D5003E93BA /* TestData.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -458,6 +455,7 @@
 			files = (
 				FA83BA7219A9D8BB00423F16 /* AHTwitterConnector.m in Sources */,
 				FA83BA4C19A8BF5600423F16 /* AHTweetBuilderTests.m in Sources */,
+				FA2CF64519AA782B003E93BA /* AHTwitterConnectorTests.m in Sources */,
 				FA83BA8B19A9F72400423F16 /* AHStreamWidgetController.m in Sources */,
 				FA83BA9119A9F80800423F16 /* AHTweetCell.m in Sources */,
 				FA83BA5B19A8EEB500423F16 /* AHTwitterUserBuilder.m in Sources */,
@@ -481,6 +479,22 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		FA2CF64A19AA81D5003E93BA /* TestData.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FA2CF64B19AA81D5003E93BA /* en */,
+			);
+			name = TestData.strings;
+			sourceTree = "<group>";
+		};
+		FA2CF65019AA843F003E93BA /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FA2CF65119AA843F003E93BA /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		FA83BA1719A8ABED00423F16 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -495,23 +509,6 @@
 				FA83BA3119A8ABED00423F16 /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		FA83BA5019A8DCFA00423F16 /* Localizable.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				FA83BA4F19A8DCFA00423F16 /* en */,
-			);
-			name = Localizable.strings;
-			path = en.lproj;
-			sourceTree = "<group>";
-		};
-		FA83BA9419AA17E200423F16 /* Localizable.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				FA83BA9519AA17E200423F16 /* en */,
-			);
-			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

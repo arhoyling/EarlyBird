@@ -20,8 +20,7 @@
 
 // Open a public stream connection to Twitter's API with the given account, filtering results
 // with the specified keyword.
-// This method returns YES if the connection was successfully opened, NO otherwise.
-- (BOOL)openStreamConnectionWithAccount:(ACAccount *)account keyword:(NSString *)keyword;
+- (void)openStreamConnectionWithAccount:(ACAccount *)account keyword:(NSString *)keyword;
 
 // Cancel the current connection if any.
 - (void)closeConnection;

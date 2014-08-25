@@ -50,6 +50,7 @@ NSString * const kTweetCellID = @"TweetCell";
 
 // Add new tweet
 - (void)addTweet:(id<AHTweet>)tweet {
+    NSLog(@"Tweet: %@", tweet);
     [_tweets addObject:tweet];
     [_tableView reloadData];
 }
