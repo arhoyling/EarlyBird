@@ -57,15 +57,16 @@ enum { kResetDelay = 20 };
     });
 }
 
-- (void)didReachRateLimit {
+- (void)didFailWithError:(NSError *)error {
     [self stopWatchingPublicStream];
-    DLog(@"Connection reached rate limit for this user.");
+    DLog(@"Connection reached rate limit for this user. Error: %@", [error description]);
     
     dispatch_async(dispatch_get_main_queue(), ^(void) {
         [_delegate couldNotWatchStream];
     });
 }
 
+// Check that there is a valid twitter account configured on the device.
 - (void)checkAccountAccess {
     ACAccountStore *accountStore = [[ACAccountStore alloc] init];
     ACAccountType *twitterAccountType = [accountStore accountTypeWithAccountTypeIdentifier:ACAccountTypeIdentifierTwitter];

@@ -11,13 +11,16 @@
 #import "AHTweetQueryView.h"
 
 @interface AHViewController ()
-@property (nonatomic) AHTwitterManager          *manager;
-@property (nonatomic) AHStreamWidgetController  *streamWidget;
-@property (nonatomic) AHTweetQueryView          *queryView;
+@property (nonatomic) AHTwitterManager          *manager;       // Manager of twitter specific operations
+@property (nonatomic) AHStreamWidgetController  *streamWidget;  // Controller taking care of tweeter display
+@property (nonatomic) AHTweetQueryView          *queryView;     // Interface to let user input hashtags.
+
+@property (nonatomic) UIActivityIndicatorView   *indicator;
 @end
 
 NSString * const kHashChar = @"#";
 
+#pragma mark -
 @implementation AHViewController
 - (id)init {
     self = [super init];
@@ -52,10 +55,23 @@ NSString * const kHashChar = @"#";
                                                  mainFrame.size.width,
                                                  mainFrame.size.height - _queryView.bounds.size.height);
     [self.view addSubview:_streamWidget.contentView];
+    
+    _indicator = [[UIActivityIndicatorView alloc]initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+    _indicator.color = [UIColor grayColor];
+    _indicator.hidden = YES;
+    _indicator.hidesWhenStopped = YES;
+    _indicator.center = _streamWidget.contentView.center;
+    
+    [self.view addSubview:_indicator];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self
+                                                                                 action:@selector(resignOnTap:)];
+    
+    [self.view addGestureRecognizer:tapGesture];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -64,7 +80,7 @@ NSString * const kHashChar = @"#";
     [_streamWidget clear];
 }
 
-#pragma mark - Query
+#pragma mark -
 - (IBAction)watchQuery:(id)sender {
     [_queryView.queryField endEditing:YES];
     if ([_queryView.queryField.text length] == 0)
@@ -75,7 +91,8 @@ NSString * const kHashChar = @"#";
 
 #pragma mark UITextFieldDelegate
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
-    [textField endEditing:YES];
+    [textField resignFirstResponder];
+    
     if ([_queryView.queryField.text length] == 0)
         [_manager stopWatchingPublicStream];
     else
@@ -85,13 +102,14 @@ NSString * const kHashChar = @"#";
 }
 
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
+    // Do not allow white space
     if ([string isEqualToString:@" "])
         return NO;
     
     return YES;
 }
 
-#pragma mark - AHTwitterManagerDelegate
+#pragma mark AHTwitterManagerDelegate
 - (void)accessGranted {
     [_queryView.watchButton setEnabled:YES];
     [_queryView.queryField setEnabled:YES];
@@ -114,8 +132,10 @@ NSString * const kHashChar = @"#";
 }
 
 - (void)didReceiveTweet:(NSObject<AHTweet> *)tweet {
-    if (tweet)
+    if (tweet) {
+        [_indicator stopAnimating];
         [_streamWidget addTweet:tweet];
+    }
 }
 
 - (void)couldNotWatchStream {
@@ -136,15 +156,24 @@ NSString * const kHashChar = @"#";
 #pragma mark - Utilities
 - (void)startWatchingWithKeyword:(NSString *)keyword {
     [_manager stopWatchingPublicStream];
+    [_streamWidget clear];
     
-    if ([keyword length] > 0)
+    if ([keyword length] > 0) {
+        [_indicator startAnimating];
         [_manager watchPublicStreamWithHashtag:[self hashtagFromString:keyword]];
+    }
 }
 
+// Add a hash at the beginning of the keyword if it is not there already.
 - (NSString *)hashtagFromString:(NSString *)string {
     if (string == nil || [string hasPrefix:kHashChar])
         return string;
     
     return [kHashChar stringByAppendingString:string];
+}
+
+// Hide keyboard when tapping outside of the query field.
+- (void)resignOnTap:(id)sender {
+    [_queryView.queryField resignFirstResponder];
 }
 @end

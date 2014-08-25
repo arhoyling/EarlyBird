@@ -13,7 +13,3 @@ Settings > Twitter > Add Account";
 "Stream.ConnectionFailed.Title" = "Connection failed";
 "Stream.ConnectionFailed.Message %@" = "Could not watch public stream for hashtag %@";
 "Stream.ConnectionFailed.Cancel" = "OK";
-
-"%d Cell.Retweets" = "%d retweets";
-
-"Test.ValidTweetJson" = "test";

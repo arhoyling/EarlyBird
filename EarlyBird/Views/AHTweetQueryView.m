@@ -10,6 +10,7 @@
 
 @implementation AHTweetQueryView
 
+// Load view from nib
 -(id)init{
    return [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass([self class])
                                                           owner:self

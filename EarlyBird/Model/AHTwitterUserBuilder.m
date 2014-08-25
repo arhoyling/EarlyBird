@@ -5,7 +5,6 @@
 //  Created by Alex on 23/08/2014.
 //  Copyright (c) 2014 Alex R. Hoyling. All rights reserved.
 //
-
 #import "AHTwitterUserBuilder.h"
 #import "AHRealTwitterUser.h"
 
@@ -26,6 +25,8 @@ static dispatch_once_t onceToken;
     return [self populateObject:[[AHRealTwitterUser alloc]init] fromDictionary:dic withDispatchTable:dispatchTable];
 }
 
+// The dispatch table is used to match json keys with properties in the tweet object. Population is done using the
+// methods below; that allows us to perform some additional work (like conversions) if need be.
 + (void)generateDispatchTable {
     dispatchTable = @{@"id_str"             : @"userID",
                       @"name"               : @"name",
@@ -33,8 +34,7 @@ static dispatch_once_t onceToken;
                       @"profile_image_url"  : @"profileImageUrl" };
 }
 
-#pragma mark Adapters
-
+#pragma mark - Adapters
 + (NSString *)userID:(NSString *)id_str { return id_str; }
 + (NSString *)name:(NSString *)name { return name; }
 + (NSString *)screenName:(NSString *)screen_name { return screen_name; }

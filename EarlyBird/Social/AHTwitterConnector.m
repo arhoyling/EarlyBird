@@ -129,7 +129,7 @@ NS_INLINE NSInteger RangeReach(NSRange range) {
             _nextRange.location = RangeReach(range);
             
             // Retrieve message length
-            _nextRange.length = [[[NSString alloc]initWithData:[data subdataWithRange:NSMakeRange(0, range.location)]
+            _nextRange.length = [[[NSString alloc]initWithData:[_dataQueue subdataWithRange:NSMakeRange(0, range.location)]
                                                       encoding:NSUTF8StringEncoding]integerValue];
         }
     }

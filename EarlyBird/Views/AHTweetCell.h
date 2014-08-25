@@ -13,11 +13,9 @@
 @property (nonatomic) IBOutlet UILabel      *nameLabel;
 @property (nonatomic) IBOutlet UILabel      *dateLabel;
 @property (nonatomic) IBOutlet UILabel      *textLabel;
-@property (nonatomic) IBOutlet UILabel      *retweetsLabel;
 
-- (void)setProfile:(NSString*)profile;
+- (void)setProfile:(UIImage *)profile;
 - (void)setName:(NSString *)name;
 - (void)setDate:(NSDate *)date;
 - (void)setText:(NSString *)text;
-- (void)setRetweets:(NSInteger)count;
 @end

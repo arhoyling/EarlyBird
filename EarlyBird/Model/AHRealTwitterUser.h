@@ -8,6 +8,7 @@
 
 #import "AHTwitterUser.h"
 
+// Concrete twitter user
 @interface AHRealTwitterUser : NSObject <AHTwitterUser>
 @property (nonatomic) NSString *userID;
 @property (nonatomic) NSString *name;

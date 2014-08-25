@@ -9,6 +9,7 @@
 #import "NSString+StringAndDate.h"
 
 #define BUFFER_SIZE 32
+// Using C library allows us to save a lot of time during conversion.
 @implementation NSString (StringAndDate)
 + (NSString *)stringWithDate:(NSDate *)date usingFormat:(NSString *)format {
     if ([format length] > BUFFER_SIZE) {

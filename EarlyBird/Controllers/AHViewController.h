@@ -7,5 +7,7 @@
 //
 #import "AHTwitterManager.h"
 
+// General controller orchestrating user inputs, tweet display via the stream widget controller,
+// and Twitter specific operations via the Twitter manager.
 @interface AHViewController : UIViewController <AHTwitterManagerDelegate, UITextFieldDelegate>
 @end

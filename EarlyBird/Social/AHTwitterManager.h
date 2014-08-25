@@ -21,13 +21,13 @@
 - (void)accessDidFailWithError:(NSError *)error;
 @end
 
-// AHTwitterManager manages user requests and feeds back tweets accordingly.
+// AHTwitterManager manages user requests and feeds back tweets accordingly to the delegate.
 @interface AHTwitterManager : NSObject <AHTwitterConnectorDelegate>
 @property (nonatomic) AHTwitterConnector                 *connector;
 @property (nonatomic, weak) id<AHTwitterManagerDelegate>  delegate;
 @property (nonatomic, readonly, getter = isWatching) BOOL watching;
 
-// Initialize with a network connector.
+// Initialize the manager with its delegate.
 - (id)initWithDelegate:(id<AHTwitterManagerDelegate>)delegate;
 
 // Watch twitter's public stream in real-time using the given hashtag.

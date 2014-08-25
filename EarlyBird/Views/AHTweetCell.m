@@ -9,40 +9,35 @@
 #import "AHTweetCell.h"
 #import "NSString+StringAndDate.h"
 
-NSString * const kDateStringFormat = @"%a %b %d %H:%M:%S";
+NSString * const kDateStringFormat = @"%H:%M:%S";
 
 @implementation AHTweetCell
 @synthesize textLabel = _textLabel;
 
-- (void)awakeFromNib {
-    // Initialization code
-    [_textLabel sizeToFit];
-}
-
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
+// Load view from nib
+- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
+    return [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass([self class])
+                                          owner:self
+                                        options:nil] firstObject];
 }
 
 #pragma Setters -
-- (void)setProfile:(NSString*)profile {
-#warning TODO fetch profile picture asynchronously
+- (void)setProfile:(UIImage*)profileImage {
+    [_profileView setImage:profileImage];
 }
 
 - (void)setName:(NSString *)name {
     _nameLabel.text = name;
 }
 
+// Convert date to a short string
 - (void)setDate:(NSDate *)date {
     _dateLabel.text = [NSString stringWithDate:date usingFormat:kDateStringFormat];
 }
 
 - (void)setText:(NSString *)text {
     _textLabel.text = text;
+    [_textLabel sizeToFit];
 }
 
-- (void)setRetweets:(NSInteger)count {
-    _retweetsLabel.text = [NSString stringWithFormat:@"%d Cell.Retweets", count];
-}
 @end
