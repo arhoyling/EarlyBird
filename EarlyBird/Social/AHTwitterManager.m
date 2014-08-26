@@ -33,7 +33,6 @@ enum { kResetDelay = 20 };
 }
 
 - (void)watchPublicStreamWithHashtag:(NSString *)hashtag {
-    DLog(@"Start watching public stream for hashtag %@", hashtag);
     if (_connector) {
         [_connector openStreamConnectionWithAccount:_account keyword:hashtag];
         _watching = YES;
@@ -59,7 +58,7 @@ enum { kResetDelay = 20 };
 
 - (void)didFailWithError:(NSError *)error {
     [self stopWatchingPublicStream];
-    DLog(@"Connection reached rate limit for this user. Error: %@", [error description]);
+    DLog(@"Connection limit for this user. Error: %@", [error description]);
     
     dispatch_async(dispatch_get_main_queue(), ^(void) {
         [_delegate couldNotWatchStream];

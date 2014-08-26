@@ -108,17 +108,14 @@ NS_INLINE NSInteger RangeReach(NSRange range) {
     _reconnInterval = 0.0;
     [self startTimeOutTimer];
     
+    // Maintain the connection but do nothing.
+    if ([data isEqual:_newLine])
+        return;
+    
     [_dataQueue appendData:data];
     
     // If we do not have the next message's range, look for it.
     if (NSEqualRanges(_nextRange, NSRangeZero)) {
-        // We are expecting the message length and a new line.
-        // If data length is shorter than or equal to a newline we know we will not find the message
-        // length (message length). Let's reset the whole thing.
-        if (_dataQueue.length <= _newLine.length) {
-            _dataQueue = [NSMutableData data];
-            return;
-        }
         NSRange range = [_dataQueue rangeOfData:_newLine
                                               options:0
                                                 range:NSMakeRange(0, [_dataQueue length])];
