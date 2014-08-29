@@ -8,6 +8,7 @@
 #import <Social/SLRequest.h>
 #import <Twitter/Twitter.h>
 #import "AHTwitterConnector.h"
+#import "AHTwitterErrors.h"
 
 @interface AHTwitterConnector () {
     NSMutableData   *_dataQueue;
@@ -50,17 +51,28 @@ NS_INLINE NSInteger RangeReach(NSRange range) {
     if (self) {
         _delegate = delegate;
         _queue = [[NSOperationQueue alloc] init];
-        _dataQueue = [NSMutableData data];
+        //_dataQueue = [NSMutableData data]; // This is not necessary with the current flow.
         _newLine = [kNewLine dataUsingEncoding:NSUTF8StringEncoding];
         _nextRange = NSRangeZero;
         _reconnInterval = 0.0;
+        _timeout = kTimeOutInterval;
     }
     
     return self;
 }
 
 - (void)openStreamConnectionWithAccount:(ACAccount *)account keyword:(NSString *)keyword {
-    // Twitter stream api only allows one connection at a time per user.
+    // Twitter stream api only allows one connection at a time per user,
+    // but let's make sure we close everything on our side.
+    [self closeConnection];
+    
+    // We want to avoid unfiltered streaming as the number of tweets per second
+    // is huge.
+    if (!keyword || [keyword length] == 0) {
+        [self failWithTwitterErrorCode:TRTwitterErrorNoKeyword];
+        return;
+    }
+        
     // The delimited key allows us to retrieve the size of the messages we receive. This size is important
     // as messages can arrive in chuncks.
     NSDictionary *params = @{ kTrackKey : keyword,
@@ -75,15 +87,21 @@ NS_INLINE NSInteger RangeReach(NSRange range) {
                                                        URL:url
                                                 parameters:params];
     
-    // Attach the account object to this request
-    [request setAccount:account];
+    @try {
+        // Attach the account object to this request. If the account is not valid, this
+        // assignment will throw an exception.
+        [request setAccount:account];
+    } @catch (NSException *excetpion) {
+        [self failWithTwitterErrorCode:TRTwitterErrorInvalidAccount];
+        return;
+    }
+    
     // Get a signed version of the request to be consumed by an NSURLConnection
     NSURLRequest *urlRequest = [request preparedURLRequest];
     
     // Prepare for time out
     _cachedAccount = account;
     _cachedKeyword = keyword;
-    [self startTimeOutTimer];
     
     // Open the streaming connection with Twitter
     dispatch_async(dispatch_get_main_queue(), ^(void) {
@@ -92,18 +110,21 @@ NS_INLINE NSInteger RangeReach(NSRange range) {
         // Ensure that the delegate callback will be called on a background queue.
         [_connection setDelegateQueue:_queue];
         [_connection start];
+        [self startTimeOutTimer];
     });
 }
 
 - (void)closeConnection {
     [self cancelTimers];
+        
+    // Make sure to reset data queue.
+    _dataQueue = [NSMutableData data];
     
-    if (_connection) {
+    if (_connection)
         [_connection cancel];
-    }
 }
 
-#pragma marl NSURLConnectionDataDelegate
+#pragma mark NSURLConnectionDataDelegate
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
     _reconnInterval = 0.0;
     [self startTimeOutTimer];
@@ -122,21 +143,18 @@ NS_INLINE NSInteger RangeReach(NSRange range) {
         
         // Check if we found a new line
         if (!NSEqualRanges(range, NSRangeZero)) {
-            // Retrieve message location
             _nextRange.location = RangeReach(range);
-            
-            // Retrieve message length
             _nextRange.length = [[[NSString alloc]initWithData:[_dataQueue subdataWithRange:NSMakeRange(0, range.location)]
                                                       encoding:NSUTF8StringEncoding]integerValue];
         }
     }
     
-    // We have enough data to process the next message
+    // If we have enough data to process the next message
     if (!NSEqualRanges(_nextRange, NSRangeZero) && RangeReach(_nextRange) <= [_dataQueue length]) {
-        // Send data to be processed
+        // Send the complete message to the delegate.
         [_delegate didReceiveData:[_dataQueue subdataWithRange:_nextRange]];
         
-        // Update data queue
+        // Remove the message we just forwarded from the data queue.
         _dataQueue = [[_dataQueue subdataWithRange:NSMakeRange(RangeReach(_nextRange),
                                                                            [_dataQueue length] - RangeReach(_nextRange))]
                             mutableCopy];
@@ -150,7 +168,7 @@ NS_INLINE NSInteger RangeReach(NSRange range) {
     if (httpResponse.statusCode == 420 || httpResponse.statusCode == 429) {
         DLog(@"User exceeded limit");
         [self closeConnection];
-        [_delegate didFailWithError:nil];
+        [self failWithTwitterErrorCode:TRTwitterErrorUserLimitReached];
     }
 }
 
@@ -159,7 +177,18 @@ NS_INLINE NSInteger RangeReach(NSRange range) {
     [_delegate didFailWithError:error];
 }
 
-#pragma mark - Timer utilities
+#pragma mark - 
+- (void)failWithTwitterErrorCode:(NSInteger)code {
+    NSError *error;
+    
+    error = [NSError errorWithDomain:TRTwitterErrorDomain
+                                code:code
+                            userInfo:nil];
+    
+    [_delegate didFailWithError:error];
+}
+
+#pragma mark Timer utilities
 // Invalidate and nullify all timers
 - (void)cancelTimers {
     if (_tTimeOut)
@@ -175,7 +204,7 @@ NS_INLINE NSInteger RangeReach(NSRange range) {
 // Cancel timers and start connection timeout timer.
 - (void)startTimeOutTimer {
     [self cancelTimers];
-    _tTimeOut = [NSTimer scheduledTimerWithTimeInterval:kTimeOutInterval
+    _tTimeOut = [NSTimer scheduledTimerWithTimeInterval:_timeout
                                                 target:self selector:@selector(resetConnection)
                                               userInfo:nil
                                                repeats:NO];
@@ -184,6 +213,11 @@ NS_INLINE NSInteger RangeReach(NSRange range) {
 // Prepare for reconnection. Reconnection will happen after the dynamic time interval _reconnInterval.
 - (void)resetConnection {
     [self closeConnection];
+    
+    // Warn the delegate that the connection timed out and we are about to reconnect.
+    if ([(NSObject *)_delegate respondsToSelector:@selector(willResetAfterTimeInterval:)]) {
+        [_delegate willResetAfterTimeInterval:_reconnInterval];
+    }
     
     _tReconnect = [NSTimer scheduledTimerWithTimeInterval:_reconnInterval
                                                    target:self

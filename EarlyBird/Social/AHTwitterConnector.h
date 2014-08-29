@@ -11,12 +11,15 @@
 @protocol AHTwitterConnectorDelegate
 - (void)didReceiveData:(NSData *)data;
 - (void)didFailWithError:(NSError *)error;
+@optional
+- (void)willResetAfterTimeInterval:(NSTimeInterval)interval;
 @end
 
 // Connector managing network connection with Twitter stream api.
 // It is responsible for reconstructing messages and reset connection in case of TCP errors.
 @interface AHTwitterConnector : NSObject <NSURLConnectionDataDelegate>
-@property (nonatomic, weak) id<AHTwitterConnectorDelegate>   delegate;
+@property (nonatomic, weak) id<AHTwitterConnectorDelegate>  delegate;
+@property (nonatomic) NSTimeInterval                        timeout;
 
 - (id)initWithDelegate:(id<AHTwitterConnectorDelegate>)delegate;
 
