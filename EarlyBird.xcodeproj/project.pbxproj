@@ -123,6 +123,7 @@
 		FA83BA9B19AA1E1C00423F16 /* NSString+StringAndDate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+StringAndDate.m"; path = "Utilities/NSString+StringAndDate.m"; sourceTree = "<group>"; };
 		FA83BA9E19AA26B000423F16 /* AHViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AHViewController.h; path = Controllers/AHViewController.h; sourceTree = "<group>"; };
 		FA83BA9F19AA26B000423F16 /* AHViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AHViewController.m; path = Controllers/AHViewController.m; sourceTree = "<group>"; };
+		FAFF3FA719B0E00300C9BB71 /* AHTwitterErrors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AHTwitterErrors.h; path = Social/AHTwitterErrors.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -267,6 +268,7 @@
 				FA83BA6819A915E000423F16 /* AHTwitterManager.m */,
 				FA83BA6F19A9D8BB00423F16 /* AHTwitterConnector.h */,
 				FA83BA7019A9D8BB00423F16 /* AHTwitterConnector.m */,
+				FAFF3FA719B0E00300C9BB71 /* AHTwitterErrors.h */,
 			);
 			name = Social;
 			sourceTree = "<group>";
