@@ -10,12 +10,12 @@ Technical details
 The connection to twitter is done by AHTwitterConnector. This connector is responsible for opening a connection with Twitter stream api, using the account it is provided. 
 
 As data received from Twitter is often fragmented, the connector manages the proper reconstruction of messages before forwarding them to its delegate. 
-This is possible using the api's *delimited=length* paramater. When this parameter is set, every data chunk sent by twitter is preceeded by the size of the following message (in string format).
+This is possible using the api's *delimited=length* parameter. When this parameter is set, every data chunk sent by twitter is preceeded by the size of the following message (in string format).
 As the connection is maintained as long as the user whishes to receive new tweets, Twitter will regularly send data with a simple newline to maintain the connection.
 The connector is also responsible for managing dynamic reconnection in case of TCP timeout (no data is received). The time interval between connection retries grows linearly (by 250ms, as per Twitter's documentation).
 
 #### Tweets and Users
-The twitter manager makes sure there is a valid twitter account configured on the device. It also handles error sent back from the connector.
+The twitter manager makes sure there is a valid twitter account configured on the device. It also handles errors sent back from the connector.
 The twitter manager is in charge of making proper tweet objects out of the messages forwarded by the connector. 
 For this, it uses a special builder that parses Json data to create tweet objects. It is highly tolerant of the input and can easily be extended if we need new fields in the tweet object. The tweet builder uses a twitter user builder internally to populate a tweet's user information. The user builder can be used seamlessly to parse profile messages directly.
 
