@@ -8,7 +8,7 @@
 #import "AHTwitterUser.h"
 #import "AHBuilder.h"
 
-// Builder generating twitter users from Json data or a dictionary.
+// Builder that generates twitter users from Json data or a dictionary.
 @interface AHTwitterUserBuilder : AHBuilder
 
 // Create a user from an dictionary

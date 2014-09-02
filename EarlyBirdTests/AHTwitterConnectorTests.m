@@ -65,7 +65,7 @@
     
     // Check that didReceiveData method is not called on the delegate after we receive only part of the message.
     [[_delegate reject] didReceiveData:[OCMArg any]];
-    //[_connector connection:[OCMArg any] didReceiveData:data1];
+    [_connector connection:[OCMArg any] didReceiveData:data1];
     [_delegate verify];
     
     // Check that the connector is properly reset when we close the connection.

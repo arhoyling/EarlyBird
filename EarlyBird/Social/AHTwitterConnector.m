@@ -32,6 +32,8 @@ enum {
     kTimeOutInterval = 90
 };
 
+static const NSTimeInterval kGrowthStep = 0.25;
+
 NSString * const kTrackKey   = @"track";
 NSString * const kDelimitedKey = @"delimited";
 NSString * const kTwitterEndPoint = @"https://stream.twitter.com/1.1/statuses/filter.json";
@@ -91,7 +93,7 @@ NS_INLINE NSInteger RangeReach(NSRange range) {
         // Attach the account object to this request. If the account is not valid, this
         // assignment will throw an exception.
         [request setAccount:account];
-    } @catch (NSException *excetpion) {
+    } @catch (NSException *exception) {
         [self failWithTwitterErrorCode:TRTwitterErrorInvalidAccount];
         return;
     }
@@ -228,7 +230,7 @@ NS_INLINE NSInteger RangeReach(NSRange range) {
 
 - (void)reconnect {
     // This interval grows linearly by 250 ms as recommended by twitter's documentation.
-    _reconnInterval += 0.25;
+    _reconnInterval += kGrowthStep;
     
     dispatch_async(dispatch_get_main_queue(), ^(void) {
         [self openStreamConnectionWithAccount:_cachedAccount keyword:_cachedKeyword];

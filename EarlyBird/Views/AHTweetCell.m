@@ -21,7 +21,7 @@ NSString * const kDateStringFormat = @"%H:%M:%S";
                                         options:nil] firstObject];
 }
 
-#pragma Setters -
+#pragma mark - Setters
 - (void)setProfile:(UIImage*)profileImage {
     [_profileView setImage:profileImage];
 }

@@ -9,7 +9,7 @@
 #import "AHWidgetController.h"
 #import "AHTweet.h"
 
-// Controller managing the display of incoming tweets in a stream widget (table view).
+// Controller that manages the display of incoming tweets in a stream widget (table view).
 @interface AHStreamWidgetController : AHWidgetController <UITableViewDataSource>
 // Clear all content
 - (void)clear;

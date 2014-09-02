@@ -21,4 +21,6 @@
         &&  [self.screenName isEqualToString:other.screenName]
         &&  [self.profileImageUrl isEqualToString:other.profileImageUrl];
 }
+
+#warning TODO add hash method that guarantees equality of hashes when two objects are equal.
 @end

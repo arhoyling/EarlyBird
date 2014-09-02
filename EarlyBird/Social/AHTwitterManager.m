@@ -59,7 +59,7 @@ enum { kResetDelay = 20 };
 - (void)didFailWithError:(NSError *)error {
     [self stopWatchingPublicStream];
 #warning TODO handle error types.
-    DLog(@"Connection limit for this user. Error: %@", error);
+    DLog(@"Connection error: %@", error);
     
     dispatch_async(dispatch_get_main_queue(), ^(void) {
         [_delegate couldNotWatchStream];

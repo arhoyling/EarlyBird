@@ -27,7 +27,7 @@
 + (id)populateObject:(id)object fromDictionary:(NSDictionary *)dic withDispatchTable:(NSDictionary *)table {
     // For every key in the dictionary
     for (NSString *key in dic) {
-        // Check if there is a corresponding key in the disptach table
+        // Check if there is a corresponding key in the dispatch table
         // Check that the corresponding value in the dispatch table is a valid selector.
         if (table[key] && class_getProperty([object class], [table[key] UTF8String])) {
             SEL selector = NSSelectorFromString([table[key] stringByAppendingString:@":"]);

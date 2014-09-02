@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-// General builder providing method to populate objects from json data, or a dictionary.
+// General builder that provides method to populate objects from json data, or from a dictionary.
 @interface AHBuilder : NSObject
 + (id)populateObject:(id)object fromJSON:(NSData *)json withDispatchTable:(NSDictionary *)table;
 + (id)populateObject:(id)object fromDictionary:(NSDictionary *)dic withDispatchTable:(NSDictionary *)table;

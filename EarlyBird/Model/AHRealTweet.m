@@ -23,4 +23,6 @@
         &&  [self.text isEqualToString:other.text]
         &&   self.retweets == other.retweets;
 }
+
+#warning TODO add hash method that guarantees equality of hashes when two objects are equal.
 @end

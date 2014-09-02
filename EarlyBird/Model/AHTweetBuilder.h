@@ -8,7 +8,7 @@
 #import "AHTweet.h"
 #import "AHBuilder.h"
 
-// Builder generating tweets from Json data.
+// Builder that generates tweets from Json data.
 @interface AHTweetBuilder : AHBuilder
 
 // Parse a json description and create a tweet.

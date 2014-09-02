@@ -44,7 +44,6 @@
                                                               nil);
     NSData * data = [stringData dataUsingEncoding:NSUTF8StringEncoding];
     
-    NSLog(@"data size: %d", data.length);
     NSObject<AHTweet> *tweet = [AHTweetBuilder tweetFromJSON:data];
     XCTAssertTrue([tweet isEqual:_tweetRef]);
 }

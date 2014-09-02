@@ -79,7 +79,6 @@ NSString * const kTweetCellID = @"TweetCell";
 
 #pragma mark - UITableViewDataSource
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Try to retrieve from the table view a now-unused cell with the given identifier.
 	AHTweetCell *cell = [_tableView dequeueReusableCellWithIdentifier:kTweetCellID];
     
     if (cell == nil) {

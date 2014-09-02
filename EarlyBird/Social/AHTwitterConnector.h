@@ -7,7 +7,6 @@
 //
 @import Accounts;
 
-// AHTwitterConnectorDelegate is a wrapper for NSURLConnectionDataDelegate.
 @protocol AHTwitterConnectorDelegate
 - (void)didReceiveData:(NSData *)data;
 - (void)didFailWithError:(NSError *)error;
@@ -16,7 +15,7 @@
 @end
 
 // Connector managing network connection with Twitter stream api.
-// It is responsible for reconstructing messages and reset connection in case of TCP errors.
+// It is responsible for reconstructing messages and resetting connection in case of TCP errors.
 @interface AHTwitterConnector : NSObject <NSURLConnectionDataDelegate>
 @property (nonatomic, weak) id<AHTwitterConnectorDelegate>  delegate;
 @property (nonatomic) NSTimeInterval                        timeout;
