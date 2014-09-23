@@ -34,11 +34,11 @@ enum {
 
 static const NSTimeInterval kGrowthStep = 0.25;
 
-NSString * const kTrackKey   = @"track";
-NSString * const kDelimitedKey = @"delimited";
-NSString * const kTwitterEndPoint = @"https://stream.twitter.com/1.1/statuses/filter.json";
-NSString * const kDelimitedValue = @"length";
-NSString * const kNewLine = @"\r\n";
+NSString * const kTrackKey          = @"track";
+NSString * const kDelimitedKey      = @"delimited";
+NSString * const kTwitterEndPoint   = @"https://stream.twitter.com/1.1/statuses/filter.json";
+NSString * const kDelimitedValue    = @"length";
+NSString * const kNewLine           = @"\r\n";
 
 #define NSRangeZero NSMakeRange(NSNotFound, 0)
 NS_INLINE NSInteger RangeReach(NSRange range) {

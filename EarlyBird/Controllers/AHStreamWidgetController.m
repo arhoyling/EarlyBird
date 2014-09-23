@@ -49,7 +49,7 @@ NSString * const kTweetCellID = @"TweetCell";
     _tableView.dataSource = self;
     _tableView.backgroundColor = [UIColor clearColor];
     _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    _tableView.rowHeight = 97;
+    _tableView.rowHeight = 97.0f;
     
     self.contentView = _tableView;
 }

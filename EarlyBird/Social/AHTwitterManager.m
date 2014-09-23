@@ -15,8 +15,6 @@
 @property (nonatomic, readwrite) BOOL  watching;
 @end
 
-enum { kResetDelay = 20 };
-
 #pragma mark -
 @implementation AHTwitterManager
 - (id)initWithDelegate:(id<AHTwitterManagerDelegate>)delegate {
