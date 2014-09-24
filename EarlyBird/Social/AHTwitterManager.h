@@ -13,7 +13,7 @@
 // This method is called when the manager receives a new tweet.
 - (void)didReceiveTweet:(NSObject<AHTweet> *)tweet;
 // This method is called when the manager fails to watch the public stream.
-- (void)couldNotWatchStream;
+- (void)couldNotWatchStreamWithMessage:(NSString *)message;
 
 // This method is called when the manager successfully connects to a twitter account on the device.
 - (void)accessGranted;

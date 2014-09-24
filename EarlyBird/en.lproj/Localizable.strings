@@ -11,5 +11,6 @@
 Settings > Twitter > Add Account";
 "Account.AccessFailed.Cancel" = "Try again!";
 "Stream.ConnectionFailed.Title" = "Connection failed";
-"Stream.ConnectionFailed.Message %@" = "Could not watch public stream for hashtag %@";
+"Stream.ConnectionFailed.NoHashtag" = "No hashtag was provided.";
+"Stream.ConnectionFailed.UserLimitReached" = "You have reached your connection limit to twitter for now.";
 "Stream.ConnectionFailed.Cancel" = "OK";

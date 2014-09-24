@@ -138,10 +138,10 @@ NSString * const kHashChar = @"#";
     }
 }
 
-- (void)couldNotWatchStream {
+- (void)couldNotWatchStreamWithMessage:(NSString *)message {
     UIAlertView *alert = [UIAlertView alloc];
     alert = [alert initWithTitle:NSLocalizedString(@"Stream.ConnectionFailed.Title", nil)
-                         message:NSLocalizedString(@"Stream.ConnectionFailed.Message", nil)
+                         message:message
                         delegate:nil
                cancelButtonTitle:NSLocalizedString(@"Stream.ConnectionFailed.Cancel", nil)
                otherButtonTitles:nil];

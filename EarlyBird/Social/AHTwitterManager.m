@@ -9,6 +9,7 @@
 
 #import "AHTwitterManager.h"
 #import "AHTweetBuilder.h"
+#import "AHTwitterErrors.h"
 
 @interface AHTwitterManager ()
 @property (nonatomic) ACAccount       *account;
@@ -55,12 +56,25 @@
 }
 
 - (void)didFailWithError:(NSError *)error {
-    [self stopWatchingPublicStream];
-#warning TODO handle error types.
     DLog(@"Connection error: %@", error);
+    [self stopWatchingPublicStream];
+    
+    NSString *message = @"";
+    switch (error.code) {
+        case TRTwitterErrorNoKeyword:
+            message = NSLocalizedString(@"Stream.ConnectionFailed.NoHashtag", nil);
+            break;
+        case TRTwitterErrorInvalidAccount:
+            [self checkAccountAccess];
+            return;
+            break;
+        case TRTwitterErrorUserLimitReached:
+            message = NSLocalizedString(@"Stream.ConnectionFailed.UserLimitReached", nil);
+            break;
+    }
     
     dispatch_async(dispatch_get_main_queue(), ^(void) {
-        [_delegate couldNotWatchStream];
+        [_delegate couldNotWatchStreamWithMessage:message];
     });
 }
 
