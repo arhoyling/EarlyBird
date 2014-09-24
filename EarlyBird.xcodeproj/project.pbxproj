@@ -49,6 +49,7 @@
 		FA83BA9D19AA1E1C00423F16 /* NSString+StringAndDate.m in Sources */ = {isa = PBXBuildFile; fileRef = FA83BA9B19AA1E1C00423F16 /* NSString+StringAndDate.m */; };
 		FA83BAA019AA26B000423F16 /* AHViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA83BA9F19AA26B000423F16 /* AHViewController.m */; };
 		FA83BAA119AA26B000423F16 /* AHViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA83BA9F19AA26B000423F16 /* AHViewController.m */; };
+		FAE480EF19D2D60A0073688C /* AHModelTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FAE480EE19D2D60A0073688C /* AHModelTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -123,6 +124,7 @@
 		FA83BA9B19AA1E1C00423F16 /* NSString+StringAndDate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+StringAndDate.m"; path = "Utilities/NSString+StringAndDate.m"; sourceTree = "<group>"; };
 		FA83BA9E19AA26B000423F16 /* AHViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AHViewController.h; path = Controllers/AHViewController.h; sourceTree = "<group>"; };
 		FA83BA9F19AA26B000423F16 /* AHViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AHViewController.m; path = Controllers/AHViewController.m; sourceTree = "<group>"; };
+		FAE480EE19D2D60A0073688C /* AHModelTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AHModelTests.m; sourceTree = "<group>"; };
 		FAFF3FA719B0E00300C9BB71 /* AHTwitterErrors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AHTwitterErrors.h; path = Social/AHTwitterErrors.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -216,6 +218,7 @@
 		FA83BA2D19A8ABED00423F16 /* EarlyBirdTests */ = {
 			isa = PBXGroup;
 			children = (
+				FAE480EE19D2D60A0073688C /* AHModelTests.m */,
 				FA2CF64419AA782B003E93BA /* AHTwitterConnectorTests.m */,
 				FA83BA4B19A8BF5600423F16 /* AHTweetBuilderTests.m */,
 				FA83BA3319A8ABED00423F16 /* EarlyBirdTests.m */,
@@ -458,6 +461,7 @@
 				FA83BA7219A9D8BB00423F16 /* AHTwitterConnector.m in Sources */,
 				FA83BA4C19A8BF5600423F16 /* AHTweetBuilderTests.m in Sources */,
 				FA2CF64519AA782B003E93BA /* AHTwitterConnectorTests.m in Sources */,
+				FAE480EF19D2D60A0073688C /* AHModelTests.m in Sources */,
 				FA83BA8B19A9F72400423F16 /* AHStreamWidgetController.m in Sources */,
 				FA83BA9119A9F80800423F16 /* AHTweetCell.m in Sources */,
 				FA83BA5B19A8EEB500423F16 /* AHTwitterUserBuilder.m in Sources */,

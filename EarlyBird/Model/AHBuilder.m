@@ -33,8 +33,15 @@
             SEL selector = NSSelectorFromString([table[key] stringByAppendingString:@":"]);
             
             // Update new tweet object with the current value.
-            [object setValue:[[self class] performSelector:selector withObject:dic[key]]
-                      forKey:table[key]];
+            if ([[self class] respondsToSelector:selector]) {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
+                // At this point, we know the selector is safe so let's suppress this warning
+                [object setValue:[[self class] performSelector:selector withObject:dic[key]]
+                          forKey:table[key]];
+#pragma clang diagnostic pop
+                
+            }
         }
     }
     

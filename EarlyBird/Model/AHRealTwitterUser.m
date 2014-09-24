@@ -22,5 +22,17 @@
         &&  [self.profileImageUrl isEqualToString:other.profileImageUrl];
 }
 
-#warning TODO add hash method that guarantees equality of hashes when two objects are equal.
+- (NSUInteger)hash {
+    NSUInteger result = 17;
+    result = 31 * result + [userID hash];
+    result = 31 * result + [name hash];
+    result = 31 * result + [screenName hash];
+    result = 31 * result + [profileImageUrl hash];
+    return result;
+}
+
+- (NSString *)description {
+    return [NSString stringWithFormat:@"<%@> %@ (%@)", self.userID, self.name, self.screenName, nil];
+}
+
 @end

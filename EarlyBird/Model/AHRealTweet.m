@@ -24,5 +24,17 @@
         &&   self.retweets == other.retweets;
 }
 
-#warning TODO add hash method that guarantees equality of hashes when two objects are equal.
+- (NSUInteger)hash {
+    NSUInteger result = 17;
+    result = 31 * result + [tweetID hash];
+    result = 31 * result + [author hash];
+    result = 31 * result + [date hash];
+    result = 31 * result + [text hash];
+    result = 31 * result + retweets;
+    return result;
+}
+
+- (NSString *)description {
+    return [NSString stringWithFormat:@"<%@> %@ - %@", self.tweetID, self.author.name, self.text, nil];
+}
 @end
